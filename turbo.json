@@ -1,16 +1,18 @@
 {
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"], 
-      "outputs": ["dist/**"]  
-    },
+  "$schema": "https://turborepo.org/schema.json",
+  "tasks": {
     "dev": {
-      "dependsOn": ["build"],
-      "persistent": true        
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"]
     },
     "test": {
-      "dependsOn": ["build"]
+        "dependsOn": ["build"]
+    },
+    "deploy": {
+        "dependsOn": ["build", "test", "lint"]
     }
-  },
-  "globalDependencies": ["node_modules/.bin"]
+  }
 }
