@@ -1,0 +1,16 @@
+{
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"], 
+      "outputs": ["dist/**"]  
+    },
+    "dev": {
+      "dependsOn": ["build"],
+      "persistent": true        
+    },
+    "test": {
+      "dependsOn": ["build"]
+    }
+  },
+  "globalDependencies": ["node_modules/.bin"]
+}
