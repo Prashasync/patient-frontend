@@ -1,0 +1,23 @@
+/* Body padding & base styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+.dark body {
+  background-color: #1f2937; /* Tailwind gray-800 */
+  color: #f3f4f6; /* Tailwind gray-100 */
+}
+
+/* Topbar icons */
+button img {
+  display: block;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+}

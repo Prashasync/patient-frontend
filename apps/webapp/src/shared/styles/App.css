@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error-message {
+  color: red;
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.dark body {
+  background-color: #121212;
+  color: white;
+}

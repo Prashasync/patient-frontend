@@ -1,0 +1,62 @@
+.mood-health-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: popIn 0.6s ease-out;
+}
+
+.final-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive perfection */
+@media (max-width: 768px) {
+  .mood-health-wrapper {
+    gap: 12px;
+  }
+
+  .final-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mood-health-wrapper {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .final-image {
+    width: 100%;
+    height: auto;
+  }
+}

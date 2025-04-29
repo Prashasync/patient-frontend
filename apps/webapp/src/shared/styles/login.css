@@ -1,0 +1,101 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 5px;
+}
+
+.login-container {
+  margin: auto;
+  width: 100%;
+  min-height: 70vh;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1,
+.login-container h2,
+.login-container p {
+  text-align: center;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #d9d9d9;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #0056b3;
+}
+
+.social-login {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.login-container form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header,
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.checkbox-group {
+  display: flex;
+}
+
+#rememberMe {
+  width: fit-content;
+}

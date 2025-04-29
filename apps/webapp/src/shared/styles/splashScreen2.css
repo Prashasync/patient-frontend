@@ -1,0 +1,112 @@
+.splash2-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fbe8d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Top text */
+.text-section {
+  width: 100%;
+  margin-top: clamp(1rem, 4vh, 2rem);
+  position: relative;
+  z-index: 2;
+}
+
+.text-section h1 {
+  font-size: clamp(18px, 4vw, 28px);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Video section */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: clamp(35vh, 50vh, 55vh);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash2-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
+  pointer-events: none;
+  border: none;
+  transform: none; 
+}
+
+/* Media query for very small screens */
+@media (max-width: 400px) {
+  .video-section {
+    height: 40vh; 
+  }
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
+  .video-section {
+    height: 55vh; 
+  }
+}
+
+/* Description text */
+.description-section {
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: clamp(0.5rem, 2vh, 1rem);
+  position: relative;
+  z-index: 2;
+}
+
+.description-section p {
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+/* Button section */
+.button-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.button-section button {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: clamp(12px, 2vw, 16px);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button styles */
+.skip-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.next-btn {
+  background-color: #c400ff;
+  color: white;
+}
