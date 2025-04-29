@@ -1,0 +1,164 @@
+.milestone-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.milestone-header {
+  background-color: #fceb78;
+  padding: 24px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+
+.milestone-header h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.milestone-header p {
+  font-size: 14px;
+  color: #333;
+}
+
+.milestone-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.milestone-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.milestone-info {
+  flex-grow: 1;
+}
+
+.milestone-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.milestone-info p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.milestone-arrow {
+  border: none;
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.milestone-add {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 80px 0px;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  font-size: 24px;
+  background: #eef1f4;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 2px;
+  height: 100%;
+  background-color: #cfcfcf;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin: 20px 0;
+  padding-left: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 22px;
+  width: 16px;
+  height: 16px;
+  background-color: #cfcfcf;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 4px;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.timeline-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.timeline-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.timeline-card img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+.emoji {
+  font-size: 24px;
+  margin-top: 8px;
+}

@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-menu,
+.navbar-search,
+.navbar-bell {
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}

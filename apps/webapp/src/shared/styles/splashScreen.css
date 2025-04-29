@@ -1,0 +1,24 @@
+.splash-container {
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #3D0073 0%, #6A00F4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  width: 40vw; /* Responsive based on screen width */
+   min-width: 180px; /* Prevent too small logo */
+  max-width: 350px; /* Prevent too big logo */
+   height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
