@@ -21,6 +21,8 @@ FROM nginx:alpine
 # Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
+RUN npm install turbo@2.0.0
+
 # Copy built React app from the previous stage
 COPY --from=build /app/build /usr/share/nginx/html
 
