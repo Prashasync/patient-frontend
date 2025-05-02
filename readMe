@@ -1,2 +1,5 @@
 REACT_APP_SERVER_URL=https://ftmwsamij8.execute-api.us-east-1.amazonaws.com/SNS/SNS_SQS_API
 REACT_APP_GOOGLE_CLIENT_ID=800791470976-1f80oefd548j7sjur57aik26crj4vpuc.apps.googleusercontent.com
+
+
+Patients arent being created on register.

@@ -45,6 +45,7 @@ const AuthService = {
         status: response.status,
       };
     } catch (error) {
+      // console.log("Error verifying OTP:", error);
       return {
         message: "OTP_VERIFICATION_FAILED",
         status: error.response?.status || 500,
@@ -56,16 +57,24 @@ const AuthService = {
   async loginUser(data) {
     try {
       const response = await AuthApi.loginUserApi(data);
-  
       return {
         message: response.message,
         status: response.status,
       };
     } catch (error) {
+      console.error("Login error:", error);
+      const status = error.response?.status || 500;
+      const message =
+        error.response?.data?.message ||
+        "Something went wrong. Please try again.";
+      const errorData = error.response?.data || {
+        error: "Unknown error occurred",
+      };
+
       return {
-        message: "LOGIN_FAILED",
-        status: error.response?.status || 500,
-        data: error.response?.data || { error: "Unknown error occurred" },
+        message,
+        status,
+        data: errorData,
       };
     }
   },

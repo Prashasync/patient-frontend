@@ -1,9 +1,10 @@
+import React from "react";
 import appointmentConfirm from "../../../assets/icons/Appointmentconfirm.svg";
 import questionnaireIcon from "../../../assets/icons/questionnaire-icon.svg";
 import weeklyReport from "../../../assets/icons/weeklyReport.png";
 import remainder from "../../../assets/icons/remainder.svg";
 import rightArrow from "../../../assets/icons/right_line.svg";
-import "../../../shared/styles/notifications.css"
+import "../../../shared/styles/notifications.css";
 
 const notifications = [
   {
@@ -38,8 +39,12 @@ const Notifications = () => {
         >
           <img src={item.icon} alt={item.title} className="w-10 h-10" />
           <div className="flex-1">
-            <h3 className="font-semibold text-sm text-gray-800 dark:text-gray-200">{item.title}</h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400">{item.subtitle}</p>
+            <h3 className="font-semibold text-sm text-gray-800 dark:text-gray-200">
+              {item.title}
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              {item.subtitle}
+            </p>
           </div>
           <img src={rightArrow} alt="Go" className="w-4 h-4" />
         </div>
@@ -48,5 +53,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications
-
+export default Notifications;

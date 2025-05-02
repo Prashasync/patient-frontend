@@ -1,3 +1,4 @@
+import React from "react";
 import MilestoneCard from "../components/MilestoneCard";
 import "../../../shared/styles/milestone.css";
 import { useEffect, useState } from "react";
@@ -9,30 +10,30 @@ const TimelineListPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/auth/check`,
-  //         {
-  //           withCredentials: true,
-  //         }
-  //       );
-  //       if (response.status === 200) {
-  //         setIsAuthenticated(true);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       setIsAuthenticated(false);
-  //       navigate("/login");
-  //     }
-  //   };
-  //   checkAuth();
-  // }, [navigate]);
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/auth/check`,
+          {
+            withCredentials: true,
+          }
+        );
+        if (response.status === 200) {
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        console.log(error);
+        setIsAuthenticated(false);
+        navigate("/login");
+      }
+    };
+    checkAuth();
+  }, [navigate]);
 
-  // if (isAuthenticated === null) {
-  //   return <div>Loading...</div>;
-  // }
+  if (isAuthenticated === null) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="milestone-container">
       <div className="milestone-header">

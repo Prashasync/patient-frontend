@@ -3,8 +3,8 @@ import QuestionOne from "../components/QuestionOne";
 import QuestionTwo from "../components/QuestionTwo";
 import QuestionThree from "../components/QuestionThree";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "../../../shared/styles/onboarding.css";
+import OnboardingService from "../services/onboardingServices";
 
 const OnboardingPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1);
@@ -13,20 +13,20 @@ const OnboardingPage = () => {
 
   const fetchUserProgress = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/patients/onboarding-status`,
-        { withCredentials: true }
-      );
-
-      if (!response.data.onboardingStatus) {
+      const response = await OnboardingService.getOnboardingData();
+      console.log("User progress response:", response);
+      if (response.status !== 200) {
+        navigate("/login");
+        return;
+      }
+      if (!response.data.question_number) {
         setCurrentQuestion(1);
         return;
       }
-
-      if (response.data.onboardingStatus.length + 1 === 4) {
+      if (response.data.question_number.length + 1 === 4) {
         navigate("/symptom-tracker");
       }
-      setCurrentQuestion(response.data.onboardingStatus.length + 1);
+      setCurrentQuestion(response.data.question_number + 1);
     } catch (error) {
       if (error.status === 401) {
         navigate("/login");
