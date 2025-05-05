@@ -1,6 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MTrackerService from "../services/MTrackerService";
 
 const NotesForEmotionsPage = () => {
   const [formData, setFormData] = useState("");
@@ -13,7 +13,17 @@ const NotesForEmotionsPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await MTrackerService.addMoodNotes(formData);
+      console.log(formData);
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_ENDPOINT}/symptoms/log/notes`,
+        { formData },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // withCredentials: truerue,
+        }
+      );
       if (response.status === 200) {
         navigate("/symptom-tracker/questionare/4");
       }

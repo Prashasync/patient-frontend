@@ -1,4 +1,3 @@
-import React from "react";
 import { useDarkMode } from "usehooks-ts";
 
 const ThemeToggle = () => {

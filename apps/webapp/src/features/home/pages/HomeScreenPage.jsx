@@ -1,72 +1,70 @@
-import React, { useEffect, useState } from "react";
-import "../../../shared/styles/bottomNavBar.css";
-import "../../../shared/styles/homeScreenPage.css";
-import gridIcon from "../../../assets/icons/grid-line.svg";
-import searchIcon from "../../../assets/icons/search_line.svg";
-import bellIcon from "../../../assets/icons/Union.png";
-import youlookHappy from "../../../assets/icons/youlookHappy.svg";
-import heartHealth from "../../../assets/icons/heartHealth.svg";
-import Notifications from "../components/Notifications";
-import AuthService from "../../auth/services/authService";
-import { useNavigate } from "react-router-dom";
-import AiChatBot from "../../chat/components/AiChatBot";
+import "../../../shared/styles/bottomNavBar.css"
+import gridIcon from "../../../assets/icons/grid-line.svg"
+import searchIcon from "../../../assets/icons/search_line.svg"
+import bellIcon from "../../../assets/icons/Union.png"
+import filterIcon from "../../../assets/icons/filter-icon.svg"
+import youlookHappy from "../../../assets/icons/youlookHappy.svg"
+import heartHealth from "../../../assets/icons/heartHealth.svg"
+import BottomNavBar from "../../../shared/components/BottomNavBar"
+import Notifications from "../components/Notifications"
 
 const HomeScreenPage = () => {
-  const [patient, setPatient] = useState(null);
-  const navigate = useNavigate();
-
-  const fetchUserData = async () => {
-    try {
-      const response = await AuthService.fetchUserData();
-      if (response.status !== 200) {
-        navigate("/");
-      }
-      console.log(response);
-      setPatient(response.data);
-    } catch (error) {
-      console.error("There was an error", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
+  const patientName = "Matt"
 
   return (
-    <div className="home-container">
-      <div className="home-header">
+    <div className="relative mx-auto px-4 pt-8 pb-24 max-w-7xl w-full bg-white min-h-screen">
+      {/* Top Bar */}
+      <div className="flex justify-between items-center mb-6">
         <button>
-          <img src={gridIcon} alt="Menu" className="header-button-icon" />
+          <img src={gridIcon} alt="Menu" className="w-5 h-5" />
         </button>
-        <div className="header-buttons">
+        <div className="flex gap-4">
           <button>
-            <img src={searchIcon} alt="Search" className="header-button-icon" />
+            <img src={searchIcon} alt="Search" className="w-5 h-5" />
           </button>
           <button>
-            <img
-              src={bellIcon}
-              alt="Notifications"
-              className="header-button-icon"
-            />
+            <img src={bellIcon} alt="Notifications" className="w-5 h-5" />
           </button>
         </div>
       </div>
-      <div className="greeting-text">
-        Hello, {patient && `${patient.first_name} ${patient.last_name}`}.<br />
-        You’ve taken a step to care for yourself.
-      </div>
-      <div className="card-grid">
-        <div className="card card-gray">
-          <img src={youlookHappy} alt="Mood" />
-        </div>
-        <div className="card card-purple">
-          <img src={heartHealth} alt="Heart Health" />
-        </div>
-      </div>
-      <Notifications />
-      <AiChatBot />
-    </div>
-  );
-};
 
-export default HomeScreenPage;
+      {/* Welcome Message */}
+      <div className="text-3xl md:text-4xl font-semibold leading-snug mb-8">
+        Hello, {patientName}. <br /> You’ve taken a step to care for yourself.
+      </div>
+
+      {/* Health Overview*/}
+      <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="bg-gray-100 rounded-xl flex flex-col justify-center items-center p-6">
+          <img
+            src= {youlookHappy}
+            alt="Mood"
+            className="w-16 h-16"
+          />
+        </div>
+
+        <div className="bg-purple-100 rounded-xl flex flex-col justify-center items-center p-6">
+          <img
+            src= {heartHealth}
+            alt="Heart Health"
+            className="w-16 h-16"
+          />
+        </div>
+      </div>
+
+      {/* Notifications */}
+      <Notifications />
+
+      {/* Floating Filter Icon */}
+      <img
+        src={filterIcon}
+        alt="Filter"
+        className="fixed bottom-20 right-6 z-50 w-20 h-20"
+      />
+      {/* Bottom Navigation */}
+      <BottomNavBar />
+    </div>
+  )
+}
+
+export default HomeScreenPage

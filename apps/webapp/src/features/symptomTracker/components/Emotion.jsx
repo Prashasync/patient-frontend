@@ -1,12 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Emotion = ({ symptomTrackerHistory }) => {
-  if (!symptomTrackerHistory || symptomTrackerHistory.length === 0) {
-    return <div className="emoji">No emotions tracked yet.</div>;
-  }
+  // if (!symptomTrackerHistory || symptomTrackerHistory.length === 0) {
+  //   return <div className="emoji">No emotions tracked yet.</div>;
+  // }
 
-  const latestEmotion = symptomTrackerHistory[symptomTrackerHistory.length - 1];
+  // const latestEmotion = symptomTrackerHistory[symptomTrackerHistory.length - 1];
 
   return (
     <div className="emoji">
@@ -21,10 +20,6 @@ const Emotion = ({ symptomTrackerHistory }) => {
       )}
     </div>
   );
-};
-
-Emotion.propTypes = {
-  symptomTrackerHistory: PropTypes.array.isRequired,
 };
 
 export default Emotion;

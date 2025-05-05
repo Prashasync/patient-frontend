@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const TimelineItem = ({ date, title, description, image, emoji }) => {
   return (
@@ -16,14 +15,6 @@ const TimelineItem = ({ date, title, description, image, emoji }) => {
       </div>
     </div>
   );
-};
-
-TimelineItem.propTypes = {
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.node.isRequired,
-  emoji: PropTypes.node.isRequired,
 };
 
 export default TimelineItem;

@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import React from "react";
 
-const AddSymptom = ({ handleClick }) => {
+const AddSymptom = ({ handleEmotionChange, handleClick }) => {
   return (
     <div className="add-symptom">
       <svg
@@ -17,17 +16,14 @@ const AddSymptom = ({ handleClick }) => {
         <path
           d="M22 29H36M29 22V36"
           stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
       </svg>
+      
     </div>
   );
-};
-
-AddSymptom.propTypes = {
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default AddSymptom;
