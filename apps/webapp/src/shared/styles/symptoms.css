@@ -5,6 +5,7 @@
   position: absolute;
   top: 0;
   z-index: -99999;
+  color: #a09898;
 }
 
 .background svg {
@@ -34,10 +35,11 @@
 }
 
 .add-symptom {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.add-symptom:hover {
+.add-symptom:hover{ 
   cursor: pointer;
 }
 
@@ -88,7 +90,7 @@
   background-color: #d9d9d9;
   width: fit-content;
   padding: 30px;
-  width: 50px;
+
 }
 
 .emotion-item {

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../../shared/styles/onboarding.css";
-import axios from "axios";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import OnboardingService from "../services/onboardingServices";
 
 const QuestionOne = ({ setCurrentQuestion }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
@@ -17,28 +20,21 @@ const QuestionOne = ({ setCurrentQuestion }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      if (selectedOptions.length === 0) {
-        setMessage("Please select at least one option");
-        setTimeout(() => {
-          setMessage("");
-        }, 3000);
-        return;
-      }
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/patients/onboarding-status`,
-        {
-          selectedOptions,
-          question_number: 1,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true
-        }
-      );
+    if (selectedOptions.length === 0) {
+      setMessage("Please select at least one option");
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
+      return;
+    }
+
+    try {
+      const response = await OnboardingService.postOnboardingData({
+        question_number: 1,
+        selected_options: selectedOptions,
+      });
+      console.log("Response from server:", response);
       if (response.status !== 200) {
         setMessage(response.data.error);
       }
@@ -50,20 +46,20 @@ const QuestionOne = ({ setCurrentQuestion }) => {
 
   const checkOnboardingStatus = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/patients/onboarding-status`,
-        // { withCredentials: true}
-      );
-
+      const response = await OnboardingService.getOnboardingData();
+      if (response.status !== 200) {
+        navigate("/login");
+        return;
+      }
       if (response.status === 200) {
-        const allAnswers = response.data.onboardingStatus;
+        const allAnswers = response.data.selected_option;
 
         const questionOne = allAnswers.find(
-          (item) => item.question_number === 1
+          (item) => item.question === 1
         );
 
-        if (questionOne && Array.isArray(questionOne.selected_options)) {
-          setSelectedOptions(questionOne.selected_options);
+        if (questionOne && Array.isArray(questionOne["answers"])) {
+          setSelectedOptions(questionOne["answers"]);
         }
       }
     } catch (error) {
@@ -86,11 +82,11 @@ const QuestionOne = ({ setCurrentQuestion }) => {
       <form onSubmit={handleSubmit}>
         {[
           { id: "Work / School Stress", label: "Work / School Stress" },
-          { id: "Relationships", label: "Relationships" },
-          { id: "Health Concerns", label: "Health Concerns" },
-          { id: "Financial Worriesr", label: "Financial Worries" },
-          { id: "Lack of Sleep", label: "Lack of Sleep" },
-          { id: "Other", label: "Other" },
+          { id: "Relationships",        label: "Relationships" },
+          { id: "Health Concerns",      label: "Health Concerns" },
+          { id: "Financial Worriesr",   label: "Financial Worries" },
+          { id: "Lack of Sleep",        label: "Lack of Sleep" },
+          { id: "Other",                label: "Other" },
         ].map(({ id, label }) => (
           <div
             key={id}
@@ -113,6 +109,10 @@ const QuestionOne = ({ setCurrentQuestion }) => {
       </form>
     </div>
   );
+};
+
+QuestionOne.propTypes = {
+  setCurrentQuestion: PropTypes.func.isRequired,
 };
 
 export default QuestionOne;

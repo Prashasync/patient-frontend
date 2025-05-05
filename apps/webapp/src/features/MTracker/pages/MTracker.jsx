@@ -5,9 +5,7 @@ import EmotionHistory from "../components/EmotionsHistory";
 import { useNavigate } from "react-router-dom";
 import Emoji from "../components/Emotion";
 import "../../../shared/styles/symptoms.css";
-import Header from "../../../shared/components/Header";
-import axios from "axios";
-import BottomNavBar from "../../../shared/components/BottomNavBar";
+import MTrackerService from "../services/MTrackerService";
 
 const SymptomTrackerPage = () => {
   const navigate = useNavigate();
@@ -19,21 +17,16 @@ const SymptomTrackerPage = () => {
 
   const retreiveSymptomTrackerHistory = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/symptoms/history`,
-        {
-          // withCredentials: true
-        }
-      );
+      const response = await MTrackerService.getMoodHistory();
+      if (response.isAuthorized === false) {
+        navigate("/");
+      }
       if (response.status === 200) {
-        setSymptomTrackerHistory(response.data.history);
+        console.log(response)
+        setSymptomTrackerHistory(response.data);
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        navigate("/login");
-      } else {
-        console.error("Error fetching symptom tracker history:", error);
-      }
+      console.error("Error fetching symptom tracker history:", error);
     }
   };
 
@@ -43,13 +36,11 @@ const SymptomTrackerPage = () => {
 
   return (
     <div className="symptom-tracker">
-      <Header />
       <h1>Symptom Tracking</h1>
       <Background />
       <Emoji symptomTrackerHistory={symptomTrackerHistory} />
       <AddSymptom handleClick={handleClick} />
       <EmotionHistory symptomTrackerHistory={symptomTrackerHistory} />
-      <BottomNavBar />
     </div>
   );
 };

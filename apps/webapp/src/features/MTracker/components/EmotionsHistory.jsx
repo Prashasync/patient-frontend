@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const EmotionHistory = ({ symptomTrackerHistory }) => {
   return (
@@ -26,6 +27,10 @@ const EmotionHistory = ({ symptomTrackerHistory }) => {
       )}
     </div>
   );
+};
+
+EmotionHistory.propTypes = {
+  symptomTrackerHistory: PropTypes.array.isRequired,
 };
 
 export default EmotionHistory;

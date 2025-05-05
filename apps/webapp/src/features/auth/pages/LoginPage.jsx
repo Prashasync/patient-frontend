@@ -19,26 +19,31 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(formData.email));
     try {
       const response = await AuthService.loginUser(formData);
-      if (response.data.message === "NOT_VERIFIED") {
+
+      if (response.message === "NOT_VERIFIED") {
         navigate("/otp");
         return;
       }
+
       if (response.status !== 200) {
-        setError(response.data.message);
+        setError(response.message || "Login failed. Please try again.");
+        setTimeout(() => setError(""), 3000);
+        localStorage.removeItem("user");
         return;
       }
+
       navigate("/onboarding");
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(
-          `${err.response?.data?.error || "Login failed"}. Please try again`
+          `${err.response?.data?.message || "Login failed"}. Please try again.`
         );
       } else {
         setError("An unexpected error occurred. Please try again.");
       }
-
       setTimeout(() => setError(""), 3000);
     }
   };

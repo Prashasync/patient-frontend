@@ -3,7 +3,7 @@ import { FaCar, FaRegCalendar } from "react-icons/fa6";
 import { LuBicepsFlexed } from "react-icons/lu";
 import { IoPeople, IoFastFood } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import MTrackerService from "../services/MTrackerService";
 
 const CauseOfEmotionPage = () => {
   const navigate = useNavigate();
@@ -17,24 +17,15 @@ const CauseOfEmotionPage = () => {
     { icon: <IoFastFood />, label: "Friends" },
   ];
 
-  const handleClick = async (cause) => {
+  const handleClick = async (data) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/symptoms/log/cause-of-emotion`,
-        { cause },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          // withCredentials: true,
-        }
-      );
-      if (response.status === 201) {
+      const response = await MTrackerService.addMoodCause(data)
+      if (response.status === 200) {
         navigate("/symptom-tracker/questionare/3");
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        navigate("/login");
+        navigate("/");
       }
       console.error("Error logging cause of emotion:", error);
     }

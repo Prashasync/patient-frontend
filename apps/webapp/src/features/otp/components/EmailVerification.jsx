@@ -33,7 +33,8 @@ const EmailVerification = ({ user }) => {
       });
 
       if (response.status !== 200) {
-        setMessage(response.data.error);
+        setMessage(response.data.message);
+        setTimeout(() => setMessage(""), 3000);
         return; 
       }
       navigate("/onboarding");

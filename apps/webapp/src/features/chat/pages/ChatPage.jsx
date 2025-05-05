@@ -1,8 +1,7 @@
 import React from "react";
 import "../../../shared/styles/chat.css";
 import SearchBar from "../components/SearchBar";
-import MessageDisplay from "./MessageDisplayPage";
-import BottomNavBar from "../../../shared/components/BottomNavBar";
+import MessageDisplay from "../components/AllMessages";
 
 const ChatPage = () => {
   return (
@@ -10,7 +9,6 @@ const ChatPage = () => {
       <h2>Messages</h2>
       <SearchBar />
       <MessageDisplay />
-      <BottomNavBar />
     </div>
   );
 };

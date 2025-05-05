@@ -15,8 +15,7 @@ const OtpPage = () => {
       const parsedUser = JSON.parse(user);
       setUser(parsedUser);
     }
-  }
-  , []);
+  }, []);
   return (
     <div className="otp">
       <EmailVerification user={user} />

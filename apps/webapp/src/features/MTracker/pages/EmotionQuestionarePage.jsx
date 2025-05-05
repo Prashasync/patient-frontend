@@ -1,30 +1,24 @@
-import axios from "axios";
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import MTrackerService from "../services/MTrackerService";
 
 const EmotionQuestionarePage = () => {
   const navigate = useNavigate();
 
   const handleClick = async (emotion) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/symptoms/log/emotions`,
-        emotion,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          // withCredentials: true,
-        }
-      );
-      if (response.status === 201) {
+      const response = await MTrackerService.addMood(emotion);
+      if(!response) {
+        console.log(response)
+      }
+      if(response?.isAuthorized === false) {
+        navigate("/")
+      }
+      if (response.status === 200) {
         navigate("/symptom-tracker/questionare/2");
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        navigate("/login");
-      }
       console.error("There was a problem adding your symptom:", error);
     }
   };

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../shared/styles/onboarding.css";
-import axios from "axios";
+import PropTypes from "prop-types";
+import OnboardingService from "../services/onboardingServices";
+import { useNavigate } from "react-router-dom";
 
 const QuestionTwo = ({ setCurrentQuestion }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const navigate = useNavigate();
   const [message, setMessage] = useState("");
 
   const handleBack = () => {
@@ -30,19 +33,10 @@ const QuestionTwo = ({ setCurrentQuestion }) => {
         return;
       }
 
-      const response = await axios.post(
-        `https://ftmwsamij8.execute-api.us-east-1.amazonaws.com/SNS/SNS_SQS_API/api/v1/patients/onboarding-status`,
-        {
-          selectedOptions,
-          question_number: 2,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true
-        }
-      );
+      const response = await OnboardingService.postOnboardingData({
+        question_number: 2,
+        selected_options: selectedOptions,
+      });
       if (response.status !== 200) {
         setMessage(response.data.error);
         return;
@@ -55,19 +49,18 @@ const QuestionTwo = ({ setCurrentQuestion }) => {
 
   const checkOnboardingStatus = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/patients/onboarding-status`,
-        // { withCredentials: true}
-      );
-
+      const response = await OnboardingService.getOnboardingData();
+      if (response.status !== 200) {
+        navigate("/login");
+        return;
+      }
       if (response.status === 200) {
-        const allAnswers = response.data.onboardingStatus;
-        const questionOne = allAnswers.find(
-          (item) => item.question_number === 2
-        );
+        const allAnswers = response.data.selected_option;
 
-        if (questionOne && Array.isArray(questionOne.selected_options)) {
-          setSelectedOptions(questionOne.selected_options);
+        const questionOne = allAnswers.find((item) => item.question === 2);
+
+        if (questionOne && Array.isArray(questionOne["answers"])) {
+          setSelectedOptions(questionOne["answers"]);
         }
       }
     } catch (error) {
@@ -122,6 +115,10 @@ const QuestionTwo = ({ setCurrentQuestion }) => {
       {message && <p className="error-message">{message}</p>}
     </div>
   );
+};
+
+QuestionTwo.propTypes = {
+  setCurrentQuestion: PropTypes.func.isRequired,
 };
 
 export default QuestionTwo;

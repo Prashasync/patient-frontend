@@ -1,10 +1,12 @@
-import axios from "axios";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import OnboardingService from "../services/onboardingServices";
 
 const QuestionThree = ({ setCurrentQuestion }) => {
   const [reminderChoice, setReminderChoice] = useState("");
   const [reminderTime, setReminderTime] = useState("8:00 AM");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -22,19 +24,14 @@ const QuestionThree = ({ setCurrentQuestion }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/patients/onboarding-status`,
-        {
-          question_number: 3,
-          selectedOptions: [{ reminderChoice, reminderTime }],
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-          // withCredentials: true,
-        }
-      );
-      if (response.status === 200) {
-        navigate("/symptom-tracker");
+      const response = await OnboardingService.postOnboardingData({
+        question_number: 3,
+        reminder_choice: reminderChoice,
+        reminder_time: reminderTime,
+      });
+      if (response.status !== 200) {
+        setMessage(response.data.error);
+        return;
       }
       navigate("/home");
     } catch (error) {
@@ -100,8 +97,13 @@ const QuestionThree = ({ setCurrentQuestion }) => {
           </button>
         </div>
       </form>
+      {message && <p className="error-message">{message}</p>}
     </div>
   );
+};
+
+QuestionThree.propTypes = {
+  setCurrentQuestion: PropTypes.func.isRequired,
 };
 
 export default QuestionThree;
