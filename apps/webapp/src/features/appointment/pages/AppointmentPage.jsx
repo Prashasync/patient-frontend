@@ -3,7 +3,6 @@ import Calendar from '../components/Calendar';
 import PlusIcon from '../../../assets/icons/plus.svg';
 import "../../../shared/styles/appointmentsPage.css";
 import AppointmentCard from "../../../features/appointment/components/AppointmentCard"
-import BottomNavBar from '../../../shared/components/BottomNavBar';
 
 const AppointmentPage = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -58,9 +57,6 @@ const AppointmentPage = () => {
           time="March 10th at 1:00pm to 1:45pm"
         />
       </section>
-
-      {/* Bottom Navigation */}
-      <BottomNavBar />
     </div>
   );
 };

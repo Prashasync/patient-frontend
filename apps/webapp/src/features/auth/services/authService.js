@@ -1,9 +1,10 @@
 import AuthApi from "../api/authApi";
 
 const AuthService = {
-  async fetchUserApi() {
+  async fetchUserData() {
     try {
       const response = await AuthApi.fetchUserApi();
+      console.log(response)
       return {
         message: "USER_FETCHED",
         data: response.data,

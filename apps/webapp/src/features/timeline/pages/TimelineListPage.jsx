@@ -1,39 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import MilestoneCard from "../components/MilestoneCard";
 import "../../../shared/styles/milestone.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import BottomNavBar from "../../../shared/components/BottomNavBar";
+import AuthService from "../../auth/services/authService";
 
 const TimelineListPage = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
   const navigate = useNavigate();
+  const [patient, setPatient] = useState(null)
+
+  const fetchUserData = async () => {
+    try {
+      const response = await AuthService.fetchUserData();
+      if (response.status !== 200) {
+        navigate("/");
+      }
+      console.log(response);
+      setPatient(response.data);
+    } catch (error) {
+      console.error("There was an error", error);
+    }
+  };
+  console.log(patient)
 
   useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/auth/check`,
-          {
-            withCredentials: true,
-          }
-        );
-        if (response.status === 200) {
-          setIsAuthenticated(true);
-        }
-      } catch (error) {
-        console.log(error);
-        setIsAuthenticated(false);
-        navigate("/login");
-      }
-    };
-    checkAuth();
-  }, [navigate]);
+    fetchUserData();
+  }, []);
 
-  if (isAuthenticated === null) {
-    return <div>Loading...</div>;
-  }
   return (
     <div className="milestone-container">
       <div className="milestone-header">
@@ -60,7 +53,6 @@ const TimelineListPage = () => {
       />
 
       <button className="milestone-add">+</button>
-      <BottomNavBar />
     </div>
   );
 };

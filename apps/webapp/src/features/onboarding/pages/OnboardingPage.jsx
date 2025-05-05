@@ -14,7 +14,6 @@ const OnboardingPage = () => {
   const fetchUserProgress = async () => {
     try {
       const response = await OnboardingService.getOnboardingData();
-      console.log("User progress response:", response);
       if (response.status !== 200) {
         navigate("/login");
         return;
@@ -23,8 +22,8 @@ const OnboardingPage = () => {
         setCurrentQuestion(1);
         return;
       }
-      if (response.data.question_number.length + 1 === 4) {
-        navigate("/symptom-tracker");
+      if (response.data.question_number + 1 === 4) {
+        navigate("/home");
       }
       setCurrentQuestion(response.data.question_number + 1);
     } catch (error) {

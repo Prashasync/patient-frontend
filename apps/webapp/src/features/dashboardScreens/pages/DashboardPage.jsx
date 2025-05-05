@@ -1,5 +1,4 @@
 import React from 'react';
-import BottomNavBar from '../../../shared/components/BottomNavBar';
 import '../../../shared/styles/bottomNavBar.css';
 import Bell from '../../../assets/icons/Union.png';
 import Search from '../../../assets/icons/search_line.svg';
@@ -42,9 +41,6 @@ const DashboardPage = () => {
       <section className="px-4 mb-20">
         <DataInsights />
       </section>
-
-      {/* Bottom Navigation */}
-      <BottomNavBar />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import "../../shared/styles/bottomNavBar.css";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import "../styles/bottomNavBar.css";
 import homeIcon from "../../assets/icons/home-icon.svg";
 import statsIcon from "../../assets/icons/stats-icon.svg";
 import appointmentIcon from "../../assets/icons/appointment-icon.svg";
@@ -22,27 +22,28 @@ const BottomNavBar = () => {
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1D0B32] border-t border-gray-700 shadow-lg flex justify-around py-3 w-full max-w-[700px] sm:max-w-[800px] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1200px] rounded-2xl backdrop-blur-lg z-50">
-      {navItems.map((item, index) => {
-        const isActive = location.pathname === item.path;
+    <>
+      <Outlet />
+      <div className="fixed-bottom-nav">
+        {navItems.map((item, index) => {
+          const isActive = location.pathname === item.path;
 
-        return (
-          <button
-            key={index}
-            className="flex flex-col items-center text-xs text-white"
-            onClick={() => navigate(item.path)}
-          >
-            <img
-              src={item.icon}
-              alt={item.label}
-              className={`w-11 h-11 transition-transform duration-300 ease-in-out ${
-                isActive ? "brightness-150 scale-110" : "opacity-70"
-              } hover:scale-110`}
-            />
-          </button>
-        );
-      })}
-    </div>
+          return (
+            <button
+              key={index}
+              className="nav-button"
+              onClick={() => navigate(item.path)}
+            >
+              <img
+                src={item.icon}
+                alt={item.label}
+                className={isActive ? "active" : ""}
+              />
+            </button>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

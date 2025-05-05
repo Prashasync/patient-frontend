@@ -3,7 +3,7 @@ import axios from "axios";
 const AuthApi = {
   async fetchUserApi() {
     try {
-      return axios.get(`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/user`, {
+      return axios.get(`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/profile`, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -1,15 +1,67 @@
-.navbar {
+.fixed-bottom-nav {
+  position: fixed;
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1d0b32;
+  border-top: 1px solid #374151;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 1rem;
+  backdrop-filter: blur(20px);
 }
 
-.navbar-menu,
-.navbar-search,
-.navbar-bell {
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
+@media (min-width: 640px) {
+  .fixed-bottom-nav {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fixed-bottom-nav {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fixed-bottom-nav {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .fixed-bottom-nav {
+    max-width: 1200px;
+  }
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.nav-button img {
+  width: 2.75rem;
+  height: 2.75rem;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.7;
+}
+
+.nav-button img.active {
+  filter: brightness(1.5);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.nav-button img:hover {
+  transform: scale(1.1);
 }

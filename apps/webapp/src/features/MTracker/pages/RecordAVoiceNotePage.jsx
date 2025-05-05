@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import axios from "axios";
 import { Mic, StopCircle, UploadCloud } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import MTrackerService from "../services/MTrackerService";
 
 const RecordAVoiceNotePage = () => {
   const [recording, setRecording] = useState(false);
@@ -37,7 +37,7 @@ const RecordAVoiceNotePage = () => {
   };
 
   const handleSkip = () => {
-    navigate("/symptom-tracker");
+    navigate("/mtracker");
   };
 
   const handleSubmit = async (e) => {
@@ -51,16 +51,9 @@ const RecordAVoiceNotePage = () => {
     formData.append("voiceNote", audioBlob, "voicenote.webm");
 
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/symptoms/log/voicenote`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-          // withCredentials: true,
-        }
-      );
+      const response = await MTrackerService.addMoodVoiceNote(formData);
       if (response.status === 200) {
-        navigate("/symptom-tracker");
+        navigate("/mtracker");
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {
