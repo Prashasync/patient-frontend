@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../shared/styles/appointmentsPage.css";
 import CheckIcon from "../../../assets/icons/check.svg";
 import PropTypes from "prop-types";
 

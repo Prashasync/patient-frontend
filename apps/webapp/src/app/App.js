@@ -24,6 +24,8 @@ import SplashScreen3 from "../features/splashScreens/pages/SplashScreen3";
 import BottomNavBar from "../shared/components/BottomNavBar";
 import AiDoctorPage from "../features/chat/components/AiDoctorPage";
 import MTracker from "../features/MTracker/pages/MTracker"
+import ScheduleAppointment from "../features/appointment/pages/ScheduleAppointment";
+import DoctorAvailability from "../features/appointment/pages/DoctorAvailability";
 
 const App = () => {
   return (
@@ -72,6 +74,8 @@ const App = () => {
           </Route>
 
           <Route path="/ai-doctor" element={<AiDoctorPage />}/>
+          <Route path="/schedule-appointment" element={<ScheduleAppointment />}/>
+          <Route path="/schedule-appointment/:doctor_id" element={<DoctorAvailability />} />
 
           <Route
             path="*"
