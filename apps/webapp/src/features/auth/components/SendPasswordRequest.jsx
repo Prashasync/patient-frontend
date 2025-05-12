@@ -11,7 +11,8 @@ const SendPasswordRequest = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "`https://ftmwsamij8.execute-api.us-east-1.amazonaws.com/SNS/SNS_SQS_API/api/v1/login`/auth/password-recovery",
+       "https://ftmwsamij8.execute-api.us-east-1.amazonaws.com/SNS/SNS_SQS_API/api/v1/login/auth/password-recovery",
+
         { email },
         {
           headers: {
@@ -28,9 +29,21 @@ const SendPasswordRequest = () => {
       setStatus(
         "If an account exists for that email, a password reset link has been sent."
       );
-    } catch (error) {
-      setStatus(error.response?.data?.message || "An error occurred.");
+    } 
+    catch (error) {
+    // Suppress CORS/Network errors in console
+    if (error?.response?.data?.message) {
+      setStatus(error.response.data.message);
+    } else {
+      setStatus("We couldn't send the OTP right now.");
     }
+
+    // Optional: only show in dev mode
+    if (process.env.NODE_ENV === "development") {
+      console.warn("OTP request failed silently due to CORS or network error.");
+    }
+  }
+
   };
 
   const verifyOtp = async (e) => {

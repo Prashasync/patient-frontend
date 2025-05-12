@@ -67,6 +67,24 @@ const AuthApi = {
       throw error;
     }
   },
+  async sendOtpApi(data) {
+  try {
+    return axios.post(
+      `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/send-otp`,
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+  } catch (error) {
+    console.error("Error sending OTP:", error);
+    throw error;
+  }
+}
+
 };
 
 export default AuthApi;
