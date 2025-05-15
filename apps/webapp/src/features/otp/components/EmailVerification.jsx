@@ -22,6 +22,9 @@ const EmailVerification = ({ user }) => {
       );
       if (nextInput) nextInput.focus();
     }
+    if (value && index === 5) {
+      handleSubmit(e);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -60,7 +63,6 @@ const EmailVerification = ({ user }) => {
             />
           ))}
         </div>
-        <button type="submit">Verify</button>
         {message && <p style={{ color: "red" }}>{message}</p>}
       </form>
     </div>

@@ -9,7 +9,7 @@ import heartHealth from "../../../assets/icons/heartHealth.svg";
 import Notifications from "../components/Notifications";
 import AuthService from "../../auth/services/authService";
 import { useNavigate } from "react-router-dom";
-import AiChatBot from "../../chat/components/AiChatBot";
+import AiChatBot from "../../chat/components/AiChatBotIcon";
 
 const HomeScreenPage = () => {
   const [patient, setPatient] = useState(null);
@@ -21,7 +21,6 @@ const HomeScreenPage = () => {
       if (response.status !== 200) {
         navigate("/");
       }
-      console.log(response);
       setPatient(response.data);
     } catch (error) {
       console.error("There was an error", error);

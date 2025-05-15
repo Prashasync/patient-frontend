@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../../shared/styles/login.css";
-import GoogleAuth from "../../../shared/components/GoogleAuth.jsx";
 import AuthService from "../services/authService.js";
+import GoogleAuth from "../../../shared/utils/GoogleAuth.jsx";
+import AppleAuth from "../../../shared/utils/AppleAuth.jsx";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -84,6 +85,7 @@ const LoginPage = () => {
           </button>
 
           <GoogleAuth />
+          <AppleAuth />
         </form>
 
         <Link to="/password-reset">Forgot Password?</Link>

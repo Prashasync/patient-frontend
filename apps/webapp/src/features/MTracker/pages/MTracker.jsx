@@ -9,7 +9,7 @@ import MTrackerService from "../services/MTrackerService";
 
 const SymptomTrackerPage = () => {
   const navigate = useNavigate();
-  const [symptomTrackerHistory, setSymptomTrackerHistory] = useState("");
+  const [symptomTrackerHistory, setSymptomTrackerHistory] = useState([]);
 
   const handleClick = () => {
     navigate("/symptom-tracker/questionare/1");
@@ -23,7 +23,7 @@ const SymptomTrackerPage = () => {
       }
       if (response.status === 200) {
         console.log(response)
-        setSymptomTrackerHistory(response.data);
+        setSymptomTrackerHistory(response.data.symptomHistory);
       }
     } catch (error) {
       console.error("Error fetching symptom tracker history:", error);

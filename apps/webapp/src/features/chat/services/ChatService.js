@@ -1,30 +1,34 @@
 import ChatApi from "../apis/ChatApi";
 
 const ChatService = {
-  async getChatHistory() {
+  async getAiDoctorChatHistory() {
     try {
-      const response = await ChatApi.getChatHistoryApi();
-
-      if (response?.unauthorized) {
-        console.warn("User is unauthorized.");
-        return null;
-      }
-
-      return response;
+      return await ChatApi.getAiDoctorChatHistory();
     } catch (error) {
       console.error("There was an error inside getChatService:", error);
       throw error;
     }
   },
 
-  async getAiDoctor() {
+  async sendAiDoctorMessage(data) {
     try {
-      const response = await ChatApi.getAiDoctor();
-      console.log(response)
+      const response = await ChatApi.sendAiDoctorMessage(data);
+      return response;
     } catch (error) {
-      console.log("There was an error in the service layer.", error);
+      console.error("There was an error inside sendMessage:", error);
+      throw error;
     }
-  }
+  },
+
+  async getChatRoom(doctor_id) {
+    try {
+      const response = await ChatApi.getChatRoom(doctor_id);
+      return response;
+    } catch (error) {
+      console.error("There was an error inside getChatRoom:", error);
+      throw error;
+    }
+  },
 };
 
 export default ChatService;

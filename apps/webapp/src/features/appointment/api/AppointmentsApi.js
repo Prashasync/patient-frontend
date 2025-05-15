@@ -25,14 +25,16 @@ const AppointmentsApi = {
     }
   },
 
-  async getDoctorProfileById(id) {
+  async getDoctorProfileById(doctor_id) {
     try {
-      return await axios.get(`${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/doctors-profile/${id}`);
+      return await axios.get(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/doctor-profile/${doctor_id}`, {withCredentials: true}
+      );
     } catch (error) {
       console.error("There was an error making the API call for doctor", error);
       throw error;
     }
-  }
+  },
 };
 
 export default AppointmentsApi;

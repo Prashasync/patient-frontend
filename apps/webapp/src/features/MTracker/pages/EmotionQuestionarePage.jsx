@@ -26,11 +26,16 @@ const EmotionQuestionarePage = () => {
   return (
     <div className="emotion-questionare">
       <div className="emotion-questionare-container">
-        <IoMdClose size={30} className="exit-btn" />
+        <IoMdClose
+          size={30}
+          className="exit-btn"
+          onClick={() => navigate("/mtracker")}
+        />
+
         <>
           <h1 className="title">How are you feeling today?</h1>
         </>
-        <div className="emotions-list">
+        <ul className="emotions-list">
           {[
             { feeling: "Happy", icon: "😊" },
             { feeling: "Sad", icon: "😢" },
@@ -53,7 +58,7 @@ const EmotionQuestionarePage = () => {
               <span>{emotion.feeling}</span>
             </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import GoogleAuth from "../../../shared/components/GoogleAuth";
 import AuthService from "../services/authService";
+import GoogleAuth from "../../../shared/utils/GoogleAuth";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({});

@@ -39,7 +39,7 @@
   justify-content: center;
 }
 
-.add-symptom:hover{ 
+.add-symptom:hover {
   cursor: pointer;
 }
 
@@ -49,72 +49,92 @@
   text-align: center;
 }
 
-.emotions-list {
-  margin-bottom: 5px;
-  padding: 25px;
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  text-align: center;
-  gap: 20px;
-}
-
-.emotions-list li {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.emotions-list li:hover {
-  cursor: pointer;
+.emotion-background {
+  padding: 30px;
 }
 
 .emotion-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 0;
-}
-
-.emotion-list li {
-  align-items: center;
-  background-color: #d9d9d9;
   list-style-type: none;
-  padding: 20px;
-  border-radius: 10px;
-}
-.emotion-background {
-  background-color: #d9d9d9;
-  width: fit-content;
-  padding: 30px;
-
+  padding: 0;
+  margin: 0;
 }
 
 .emotion-item {
-  color: black;
-  text-decoration: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: baseline;
-  background-color: #d9d9d9;
-  padding: 10px;
+  background-color: #ddd;
+  margin-bottom: 8px;
+  border-radius: 8px;
 }
+
+.emotion-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 12px;
+}
+
+.emotion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emotions-list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.emotions-list li {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emotions-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.emotion-background {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
 
 .note-container {
   height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 10px;
 }
 
 .note-textarea {
+  border: 1px solid #d9d9d9;
   border-radius: 10px;
   width: 95%;
   margin: 15px 0;
   padding: 11px;
+}
+
+.skip {
+  padding-top: 15px;
 }
 
 .notes-btn {

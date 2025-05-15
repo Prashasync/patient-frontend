@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import NewPasswordForm from "./NewPasswordForm";
+import AuthService from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 const SendPasswordRequest = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState("");
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/login");
+  };
 
   const requestOtp = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "`https://ftmwsamij8.execute-api.us-east-1.amazonaws.com/SNS/SNS_SQS_API/api/v1/login`/auth/password-recovery",
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/send-password-recovery`,
         { email },
         {
           headers: {
@@ -36,10 +44,10 @@ const SendPasswordRequest = () => {
   const verifyOtp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/v1/login/auth/verify-otp`,
-        { email: localStorage.getItem("email"), otp }
-      );
+      const response = await AuthService.verifyRecoveryOtp({
+        email: localStorage.getItem("email"),
+        otp,
+      });
       if (response.status !== 200) {
         console.log(response);
         return;
@@ -73,6 +81,7 @@ const SendPasswordRequest = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button type="submit">Send OTP</button>
+          <button onClick={handleRedirect}>Back</button>
         </form>
       )}
 
@@ -86,10 +95,11 @@ const SendPasswordRequest = () => {
             onChange={(e) => setOtp(e.target.value)}
           />
           <button type="submit">Verify OTP</button>
+          <button onClick={handleRedirect}>Back</button>
         </form>
       )}
 
-      {step === 3 && <p>Please check your email for the reset link.</p>}
+      {step === 3 && <NewPasswordForm email={email} />}
 
       {status && <p>{status}</p>}
     </div>

@@ -78,7 +78,7 @@ const RecordAVoiceNotePage = () => {
           <button
             type="button"
             onClick={startRecording}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2"
+            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2 w-full text-center"
           >
             <Mic size={20} /> Record
           </button>
@@ -107,7 +107,7 @@ const RecordAVoiceNotePage = () => {
       >
         <UploadCloud size={18} /> Submit Voice Note
       </button>
-      <button onClick={handleSkip}>Skip</button>
+      <button onClick={handleSkip}className="skip">Skip</button>
 
       {message && (
         <p className="mt-3 text-sm text-center text-gray-700">{message}</p>

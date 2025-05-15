@@ -35,14 +35,12 @@ const NotesForEmotionsPage = () => {
       <form>
         <h1>Would you like to add a note?</h1>
         <label htmlFor="note">Quick Note</label>
-        <textarea
+        <input
           placeholder="Write your note here..."
-          rows="4"
-          cols="50"
           className="note-textarea"
           value={formData}
           onChange={handleTextareaChange}
-        ></textarea>
+        ></input>
       </form>
       <div className="notes-btn">
         <button onClick={handleSkip}>Skip</button>

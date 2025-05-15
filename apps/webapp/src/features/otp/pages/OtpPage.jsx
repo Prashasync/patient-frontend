@@ -8,7 +8,7 @@ const OtpPage = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("email");
     if (!user) {
       navigate("/login");
     } else {

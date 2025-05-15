@@ -1,15 +1,14 @@
 import axios from "axios";
 
 const ChatApi = {
-  async getChatHistoryApi() {
+  async getAiDoctorChatHistory() {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat`,
+      return await axios.get(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/ai-doctor`,
         {
           withCredentials: true,
         }
       );
-      return response.data;
     } catch (error) {
       if (error.response?.status === 401) {
         return { unauthorized: true };
@@ -19,17 +18,40 @@ const ChatApi = {
     }
   },
 
-  async getAiDoctor() {
-    return axios.get(
-      `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/ai-doctor`,
-      {
-        withCredentials: true,
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    );
-  }
+  async sendAiDoctorMessage(data) {
+    try {
+      return await axios.post(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/ai-doctor`,
+        { data },
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Chat API error:", error);
+      throw error;
+    }
+  },
+
+  async getChatRoom(doctor_id) {
+    try {
+      return await axios.get(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/${doctor_id}`,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Chat API error:", error);
+      throw error;
+    }
+  },
 };
 
 export default ChatApi;

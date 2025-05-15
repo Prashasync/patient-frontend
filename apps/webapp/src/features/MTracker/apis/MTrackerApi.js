@@ -16,6 +16,7 @@ const MTrackerApi = {
         };
       }
       console.error("There was an error with the API request:", error);
+      throw error;
     }
   },
 
@@ -38,6 +39,7 @@ const MTrackerApi = {
         };
       }
       console.error("There was an error making the API call:", error);
+      throw error;
     }
   },
 

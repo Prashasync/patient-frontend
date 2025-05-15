@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../shared/styles/App.css";
-import AppointmentPage from "../features/appointment/pages/AppointmentPage";
 import HomeScreenPage from "../features/home/pages/HomeScreenPage";
 import DashboardPage from "../features/dashboardScreens/pages/DashboardPage";
 import LoginPage from "../features/auth/pages/LoginPage";
@@ -14,18 +13,16 @@ import NotesForEmotionsPage from "../features/MTracker/pages/NotesForEmotionsPag
 import RecordAVoiceNotePage from "../features/MTracker/pages/RecordAVoiceNotePage";
 import ForgotPasswordPage from "../features/auth/pages/ForgotPasswordPage";
 import ChatPage from "../features/chat/pages/ChatPage";
-import MessageDisplayPage from "../features/chat/components/AllMessages";
-import KidTimelinePage from "../features/timeline/pages/KidTimelinePage";
-import TimelineListPage from "../features/timeline/pages/TimelineListPage";
+
 import SplashScreen from "../features/splashScreens/pages/SplashScreen";
 import SplashScreen1 from "../features/splashScreens/pages/SplashScreen1";
 import SplashScreen2 from "../features/splashScreens/pages/SplashScreen2";
 import SplashScreen3 from "../features/splashScreens/pages/SplashScreen3";
 import BottomNavBar from "../shared/components/BottomNavBar";
-import AiDoctorPage from "../features/chat/components/AiDoctorPage";
 import MTracker from "../features/MTracker/pages/MTracker"
-import ScheduleAppointment from "../features/appointment/pages/ScheduleAppointment";
-import DoctorAvailability from "../features/appointment/pages/DoctorAvailability";
+import ChatRoom from "../features/chat/pages/ChatRoom";
+import ComingSoon from "../shared/components/ComingSoon";
+import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
 
 const App = () => {
   return (
@@ -65,17 +62,24 @@ const App = () => {
           <Route element={<BottomNavBar />}>
             <Route path="/home" element={<HomeScreenPage />}></Route>
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/appointments" element={<AppointmentPage />} />
+            <Route path="/appointments" element={<ComingSoon />} />
             <Route path="/mtracker" element={<MTracker />} />
             <Route path="/chat" element={<ChatPage />} />
-            <Route path="/chat/:id" element={<MessageDisplayPage />} />
-            <Route path="/timeline" element={<TimelineListPage />} />
-            <Route path="/timeline/:title" element={<KidTimelinePage />} />
+            <Route path="/timeline" element={<ComingSoon />} />
+            {/* <Route path="/timeline/:title" element={<KidTimelinePage />} /> */}
           </Route>
-
-          <Route path="/ai-doctor" element={<AiDoctorPage />}/>
-          <Route path="/schedule-appointment" element={<ScheduleAppointment />}/>
-          <Route path="/schedule-appointment/:doctor_id" element={<DoctorAvailability />} />
+          
+          <Route path="/chat/:id" element={<ChatRoom />} />
+          {/* <Route
+            path="/schedule-appointment"
+            element={<ScheduleAppointment />}
+          /> */}
+          {/* <Route
+            path="/schedule-appointment/:doctor_id"
+            element={<DoctorAvailability />}
+          /> */}
+          <Route path="/ai-doctor/:patientId" element={<AiDoctorPage />} />
+          {/* <Route path="/coming-soon" element={<ComingSoon />} /> */}
 
           <Route
             path="*"
@@ -88,3 +92,4 @@ const App = () => {
 };
 
 export default App;
+  

@@ -6,7 +6,7 @@ const MessageThread = ({ message }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/messages/${message.id}`);
+    navigate(`/chat/${message.id}`);
   };
 
   return (
@@ -27,6 +27,7 @@ const MessageThread = ({ message }) => {
         </div>
         <p className="message-text">{message.text}</p>
       </div>
+      <input type="text" name="text" id="text" />
     </div>
   );
 };

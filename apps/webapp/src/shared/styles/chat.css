@@ -91,6 +91,10 @@ w .profile-picture {
   margin-bottom: 10px;
 }
 
+.messages { 
+  padding: 2%;
+}
+
 .chat-messages {
   display: flex;
   flex-direction: column;
@@ -166,4 +170,75 @@ w .profile-picture {
   align-items: center;
   margin-bottom: 10px;
   width: 55%;
+}
+
+.add-message-popup {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  z-index: 999;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.doctor-list-messages {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doctor-card-messages {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.doctor-card-messages:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.doctor-card-messages img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.doctor-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.doctor-specialization {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.chat-room-message-input {
+  
 }

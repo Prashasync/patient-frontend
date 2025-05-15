@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ChatService from "../services/ChatService";
 import MessageThread from "./MessgeThread";
-import AiChatBot from "./AiChatBot";
+import AiChatBot from "./AiChatBotIcon";
 
 const MessageDisplayPage = () => {
   const navigate = useNavigate();
