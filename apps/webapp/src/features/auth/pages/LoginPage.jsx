@@ -20,6 +20,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    formData.email = formData.email.toLowerCase();
     localStorage.setItem("user", JSON.stringify(formData.email));
     try {
       const response = await AuthService.loginUser(formData);

@@ -5,8 +5,9 @@ import {
   FaArrowLeft,
   FaStop,
 } from "react-icons/fa";
-import { useParams } from "react-router-dom";
-import "../../../shared/styles/aiDoctor.css"
+import { useNavigate, useParams } from "react-router-dom";
+import "../../../shared/styles/aiDoctor.css";
+import ChatService from "../services/ChatService";
 
 const AiDoctorPage = () => {
   const [ws, setWs] = useState(null);
@@ -15,6 +16,8 @@ const AiDoctorPage = () => {
   const [messageInput, setMessageInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [showTyping, setShowTyping] = useState(false);
+  const [messageHistory, setMessageHistory] = useState([]);
+  const navigate = useNavigate();
 
   const mediaRecorderRef = useRef(null);
   const chatMessagesRef = useRef(null);
@@ -31,11 +34,31 @@ const AiDoctorPage = () => {
   }, []);
 
   useEffect(() => {
-    // Scroll to bottom on new message
+    fetchAiDoctorHistory();
+  }, []);
+
+  useEffect(() => {
     if (chatMessagesRef.current) {
       chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
     }
   }, [messages]);
+
+  const fetchAiDoctorHistory = async () => {
+    try {
+      const response = await ChatService.getAiDoctorChatHistory();
+      if (response.status !== 200) {
+        navigate("/");
+      }
+      setMessageHistory(response.data);
+      console.log(response);
+    } catch (err) {
+      console.error("Failed to fetch chat history", err);
+    }
+  };
+
+  const handleRedirect = () => {
+    navigate("/home")
+  }
 
   const connectWebSocket = () => {
     if (ws) ws.close();
@@ -192,26 +215,26 @@ const AiDoctorPage = () => {
     <div className="chat-container">
       <div className="chat-header">
         <button className="back-button">
-          <FaArrowLeft />
+          <FaArrowLeft onClick={handleRedirect}/>
         </button>
         <h2 className="chat-title">Prasha Doctor</h2>
         <div className="header-placeholder" />
       </div>
 
       <div className="chat-messages" ref={chatMessagesRef}>
-        {messages.length === 0 ? (
+        {[...messageHistory, ...messages].length === 0 ? (
           <div className="empty-chat">
             <h1>Start a conversation with Prasha Doctor</h1>
           </div>
         ) : (
-          messages.map((msg) => (
+          [...messageHistory, ...messages].map((msg, index) => (
             <div
-              key={msg.id}
+              key={msg.id || index}
               className={`message ${
                 msg.sender === "user" ? "user-message" : "ai-message"
               }`}
             >
-              <div className="message-text">{msg.text}</div>
+              <div className="message-text">{msg.message_text}</div>
               <div className="message-time">{msg.time}</div>
             </div>
           ))

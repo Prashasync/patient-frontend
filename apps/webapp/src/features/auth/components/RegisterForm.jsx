@@ -23,9 +23,22 @@ const RegisterForm = () => {
       setTimeout(() => setMessage(""), 3000);
       return;
     }
-    
+
+    if (
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-={};':"\\|,.<>/?]).{8,}$/.test(
+        formData.password
+      )
+    ) {
+      setMessage(
+        "Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
+      );
+      setTimeout(() => setMessage(""), 4000);
+      return;
+    }
+
+    formData.email = formData.email.toLowerCase();
     const response = await AuthService.registerUser(formData);
-  
+
     if (response.status === 200) {
       navigate("/otp");
     } else {
