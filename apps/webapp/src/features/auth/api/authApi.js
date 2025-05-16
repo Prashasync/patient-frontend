@@ -75,12 +75,11 @@ const AuthApi = {
     try {
       return axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/send-otp`,
-        data,
+        {data},
         {
           headers: {
             "Content-Type": "application/json",
           },
-          withCredentials: true,
         }
       );
     } catch (error) {

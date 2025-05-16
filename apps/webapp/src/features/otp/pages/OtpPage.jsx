@@ -12,8 +12,7 @@ const OtpPage = () => {
     if (!user) {
       navigate("/login");
     } else {
-      const parsedUser = JSON.parse(user);
-      setUser(parsedUser);
+      setUser(user);
     }
   }, []);
   return (

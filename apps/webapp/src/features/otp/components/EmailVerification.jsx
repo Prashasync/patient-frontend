@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../../auth/services/authService";
 import PropTypes from "prop-types";
 
+
+
 const EmailVerification = ({ user }) => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]); 
+  
+
+  const sendOtp = async () => {
+    try {
+      const email = localStorage.getItem("email");
+      console.log("emiail here", email);
+      const response = await AuthService.sendOtp(email);
+      console.log(response);
+    } catch (error) {
+      console.error("Error inside sending otp:", error);
+    }
+  };
+
+ 
+
 
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
@@ -34,7 +51,7 @@ const EmailVerification = ({ user }) => {
         otp: otp.join(""),
         email: user,
       });
-
+      setMessage(response.data.message);
       if (response.status !== 200) {
         setMessage(response.data.message);
         setTimeout(() => setMessage(""), 3000);
@@ -46,6 +63,11 @@ const EmailVerification = ({ user }) => {
       setMessage("An error occurred while verifying the email.");
     }
   };
+
+   useEffect(() => {
+    sendOtp();
+  }, []);
+
 
   return (
     <div className="email-verification">

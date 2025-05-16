@@ -18,6 +18,25 @@ const AuthService = {
     }
   },
 
+
+  async sendOtp(data){
+    try{
+      const response = await AuthApi.sendOtpApi(data);
+      console.log("data authservice", data);
+      return{
+        message: "Otp SENT to Email",
+        data: response.data,
+        status:response.status,
+      }
+    }catch (error) {
+      return {
+        message: "OTP Failed to send",
+        status: error.response?.status || 500,
+        data: error.response?.data || { error: "Unknown error occurred" },
+      };
+    }
+  },
+
   async registerUser(data) {
     try {
       const response = await AuthApi.registerUserApi(data);
