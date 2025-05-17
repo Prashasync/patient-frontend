@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthService from "../services/authService";
-import GoogleAuth from "../../../shared/utils/GoogleAuth";
+import AuthService from "../services/authService"
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({});
@@ -160,8 +159,6 @@ const RegisterForm = () => {
         </div>
         {message && <p className="error-message">{message}</p>}
         <p>By clicking you accept the terms of the Privacy Policy</p>
-        <p>or Sign up with</p>
-        <GoogleAuth />
       </form>
     </>
   );

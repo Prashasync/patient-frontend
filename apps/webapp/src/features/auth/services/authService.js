@@ -18,7 +18,6 @@ const AuthService = {
     }
   },
 
-
   async sendOtp(data){
     try{
       const response = await AuthApi.sendOtpApi(data);
@@ -64,7 +63,6 @@ const AuthService = {
         status: response.status,
       };
     } catch (error) {
-      // console.log("Error verifying OTP:", error);
       return {
         message: "OTP_VERIFICATION_FAILED",
         status: error.response?.status || 500,
