@@ -22,9 +22,11 @@ import BottomNavBar from "../shared/components/BottomNavBar";
 import MTracker from "../features/MTracker/pages/MTracker"
 import ChatRoom from "../features/chat/pages/ChatRoom";
 import ComingSoon from "../shared/components/ComingSoon";
-import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
+// import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
+import VerificationSuccessful from "../features/otp/components/VerificationSuccessful";
+import ChatFinal from "../features/chat/pages/ChatFinal";
 
-const App = () => {
+const App = () => { 
   return (
     <div className="bg-white min-h-screen ">
       <Router>
@@ -68,8 +70,17 @@ const App = () => {
             <Route path="/timeline" element={<ComingSoon />} />
             {/* <Route path="/timeline/:title" element={<KidTimelinePage />} /> */}
           </Route>
-          
+
           <Route path="/chat/:id" element={<ChatRoom />} />
+          <Route path="/ai-doctor/:patientId" element={<ChatFinal />} />
+          <Route
+            path="/verification-successful"
+            element={<VerificationSuccessful />}
+          />
+          <Route
+            path="*"
+            element={<h1 style={{ textAlign: "center" }}>404 Not Found</h1>}
+          />
           {/* <Route
             path="/schedule-appointment"
             element={<ScheduleAppointment />}
@@ -78,13 +89,6 @@ const App = () => {
             path="/schedule-appointment/:doctor_id"
             element={<DoctorAvailability />}
           /> */}
-          <Route path="/ai-doctor/:patientId" element={<AiDoctorPage />} />
-          {/* <Route path="/coming-soon" element={<ComingSoon />} /> */}
-
-          <Route
-            path="*"
-            element={<h1 style={{ textAlign: "center" }}>404 Not Found</h1>}
-          />
         </Routes>
       </Router>
     </div>

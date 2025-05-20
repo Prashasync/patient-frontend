@@ -36,6 +36,24 @@ const ChatApi = {
     }
   },
 
+  async saveAiDoctorResponse(data) {
+    try {
+      return await axios.post(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/ai-doctor-response`,
+        { data },
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Chat API error:", error);
+      throw error;
+    }
+  },
+
   async getChatRoom(doctor_id) {
     try {
       return await axios.get(
@@ -52,6 +70,23 @@ const ChatApi = {
       throw error;
     }
   },
+
+  async sendFeedback(data) {
+    try {
+      return await axios.get(
+        `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/ai-doctor-feedback`,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Chat API error:", error);
+      throw error;
+    }
+  }
 };
 
 export default ChatApi;

@@ -8,6 +8,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import "../../../shared/styles/aiDoctor.css";
 import ChatService from "../services/ChatService";
+import socket from "../../../sockets/socket";
 
 const AiDoctorPage = () => {
   const [ws, setWs] = useState(null);
@@ -57,8 +58,8 @@ const AiDoctorPage = () => {
   };
 
   const handleRedirect = () => {
-    navigate("/home")
-  }
+    navigate("/home");
+  };
 
   const connectWebSocket = () => {
     if (ws) ws.close();
@@ -66,13 +67,19 @@ const AiDoctorPage = () => {
     try {
       const protocol = remoteServerUrl.startsWith("https") ? "wss:" : "ws:";
       const host = remoteServerUrl.replace(/^https?:\/\//, "");
-      const wsUrl = `${protocol}//${host}/smart-chat/${patientId}?token=${jwtToken}`;
+      const wsUrl = `${protocol}//${host}/chat-final/${patientId}`;
 
       const websocket = new WebSocket(wsUrl);
       setWs(websocket);
 
       websocket.onopen = () => {
         console.log("WebSocket connection opened");
+        socket.send(
+          JSON.stringify({
+            token: jwtToken,
+            voice: voiceSelect.value
+          })
+        );
       };
 
       websocket.onmessage = (event) => {
@@ -112,8 +119,10 @@ const AiDoctorPage = () => {
     addMessage(text, "user");
   };
 
-  const handleResponse = (text) => {
+  const handleResponse = async (text) => {
+    const message = text;
     addMessage(text, "ai");
+    await ChatService.saveAiDoctorResponse(message);
   };
 
   const addMessage = (text, sender) => {
@@ -141,7 +150,7 @@ const AiDoctorPage = () => {
 
     try {
       ws.send(JSON.stringify({ text: message }));
-      console.log("Message sent:", message);
+      await ChatService.sendAiDoctorMessage(message);
     } catch (error) {
       console.error("Error sending message:", error);
       setShowTyping(false);
@@ -215,7 +224,7 @@ const AiDoctorPage = () => {
     <div className="chat-container">
       <div className="chat-header">
         <button className="back-button">
-          <FaArrowLeft onClick={handleRedirect}/>
+          <FaArrowLeft onClick={handleRedirect} />
         </button>
         <h2 className="chat-title">Prasha Doctor</h2>
         <div className="header-placeholder" />
@@ -234,7 +243,8 @@ const AiDoctorPage = () => {
                 msg.sender === "user" ? "user-message" : "ai-message"
               }`}
             >
-              <div className="message-text">{msg.message_text}</div>
+              <div className="message-text">{msg.message_text || msg.text}</div>
+
               <div className="message-time">{msg.time}</div>
             </div>
           ))

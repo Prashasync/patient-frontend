@@ -20,6 +20,26 @@ const ChatService = {
     }
   },
 
+  async saveAiDoctorResponse(data) {
+    try {
+      const response = await ChatApi.saveAiDoctorResponse(data);
+      return response;
+    } catch (error) {
+      console.error("There was an error inside getChatRoom:", error);
+      throw error;
+    }
+  },
+
+  async sendFeedback() {
+    try {
+      const response = await ChatApi.sendFeedback(data);
+      return response;
+    } catch (error) {
+      console.error("There was an error inside getChatRoom:", error);
+      throw error;
+    }
+  },
+
   async getChatRoom(doctor_id) {
     try {
       const response = await ChatApi.getChatRoom(doctor_id);

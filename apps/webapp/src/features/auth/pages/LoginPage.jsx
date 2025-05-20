@@ -85,8 +85,10 @@ const LoginPage = () => {
             Continue
           </button>
 
-          <GoogleAuth />
-          <AppleAuth />
+          <div className="social-container-flex">
+            <GoogleAuth />
+            <AppleAuth />
+          </div>
         </form>
 
         <Link to="/password-reset">Forgot Password?</Link>

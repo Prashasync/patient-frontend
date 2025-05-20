@@ -64,6 +64,16 @@
   background-color: #0056b3;
 }
 
+.social-container-flex {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-login-container {
+  width: 10%;
+}
+
 .social-login {
   width: 100%;
   padding: 12px;

@@ -20,6 +20,33 @@
   padding: 10px;
 }
 
+.email-verification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.email-verification-header {
+  width: 85%;
+  text-align: center;
+}
+
+.email-verification-header h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 5%;
+}
+
+.resend-otp-btn {
+  font-weight: 800;
+}
+
+.resend-otp-btn:hover {
+  cursor: pointer;
+}
+
 .otp-inputs {
   display: flex;
   justify-content: center;
@@ -95,4 +122,82 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 24px;
+  background-color: #f2f5f6;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+
+.checkmark-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #6B4EFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  animation: popIn 0.6s ease-out forwards;
+}
+
+.checkmark {
+  font-size: 64px;
+  color: white;
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out 0.3s forwards;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #444;
+  animation: fadeIn 1s ease-in 0.6s forwards;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

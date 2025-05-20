@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 const EmailVerification = ({ user }) => {
   const [message, setMessage] = useState("");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [resendOtp, setResendOtp] = useState(false);
   const navigate = useNavigate();
 
   const sendOtp = async () => {
@@ -42,6 +43,10 @@ const EmailVerification = ({ user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setTimeout(() => {
+      setResendOtp(true);
+    }, 5000);
+
     try {
       const response = await AuthService.verifyOtp({
         otp: otp.join(""),
@@ -56,14 +61,13 @@ const EmailVerification = ({ user }) => {
         return;
       }
 
-      navigate("/onboarding");
+      navigate("/verification-successful");
     } catch (error) {
       console.error("Error verifying email:", error);
       setMessage("An error occurred while verifying the email.");
     }
   };
 
-  // Auto-submit when OTP is fully filled
   useEffect(() => {
     if (otp.every((digit) => digit !== "")) {
       const timeout = setTimeout(() => {
@@ -79,6 +83,22 @@ const EmailVerification = ({ user }) => {
 
   return (
     <div className="email-verification">
+      <div className="email-verification-header">
+        <h1>Enhance Your Security</h1>
+        <p>
+          Protect your account with an extra layer of security. Enter the
+          verification code sent to{" "}
+          {(() => {
+            const email = localStorage.getItem("email") || "";
+            const [localPart, domain] = email.split("@");
+            if (!localPart || !domain) return email;
+
+            const visible = localPart.slice(0, 2);
+            const masked = "*".repeat(localPart.length - 2);
+            return `${visible}${masked}@${domain}`;
+          })()}
+        </p>
+      </div>
       <form onSubmit={handleSubmit} className="otp-form">
         <h2>Email Verification</h2>
         <p>Please enter the OTP sent to your email:</p>
@@ -103,6 +123,14 @@ const EmailVerification = ({ user }) => {
           <p style={{ color: "red", marginTop: "1rem" }}>{message}</p>
         )}
       </form>
+      {resendOtp && (
+        <p>
+          Didnt receive the otp?{" "}
+          <span className="resend-otp-btn" onClick={sendOtp}>
+            Resend otp
+          </span>
+        </p>
+      )}
     </div>
   );
 };
