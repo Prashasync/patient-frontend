@@ -41,11 +41,12 @@ const EmailVerification = ({ user }) => {
     }
   };
 
+  setTimeout(() => {
+    setResendOtp(true);
+  }, 5000);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      setResendOtp(true);
-    }, 5000);
 
     try {
       const response = await AuthService.verifyOtp({

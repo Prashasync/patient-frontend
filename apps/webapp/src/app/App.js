@@ -22,9 +22,8 @@ import BottomNavBar from "../shared/components/BottomNavBar";
 import MTracker from "../features/MTracker/pages/MTracker"
 import ChatRoom from "../features/chat/pages/ChatRoom";
 import ComingSoon from "../shared/components/ComingSoon";
-// import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
 import VerificationSuccessful from "../features/otp/components/VerificationSuccessful";
-import ChatFinal from "../features/chat/pages/ChatFinal";
+import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
 
 const App = () => { 
   return (
@@ -72,7 +71,7 @@ const App = () => {
           </Route>
 
           <Route path="/chat/:id" element={<ChatRoom />} />
-          <Route path="/ai-doctor/:patientId" element={<ChatFinal />} />
+          <Route path="/ai-doctor/:patientId" element={<AiDoctorPage />} />
           <Route
             path="/verification-successful"
             element={<VerificationSuccessful />}

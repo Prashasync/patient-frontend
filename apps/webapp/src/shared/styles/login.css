@@ -9,8 +9,8 @@
 .login-container {
   margin: auto;
   width: 100%;
-  min-height: 70vh;
-  background-color: #ffffff;
+  height: 100vh;
+  background-color: #ecf0f1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -22,11 +22,19 @@
   padding-bottom: 5%;
 }
 
-.login-container h1,
-.login-container h2,
 .login-container p {
   text-align: center;
   width: 100%;
+}
+
+.login-container h2 {
+  text-align: start;
+  font-size: 24px;
+  width: 90%;
+}
+
+.login-container p a {
+  font-weight: 600;
 }
 
 .form-group {
@@ -43,7 +51,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #d9d9d9;
+  background-color: #FFFFFF;
 }
 
 .primary-button {

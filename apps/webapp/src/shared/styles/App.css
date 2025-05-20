@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: #ecf0f1;
   color: black;
   transition: background-color 0.3s, color 0.3s;
   font-family: "Poppins", sans-serif;
