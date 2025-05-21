@@ -96,15 +96,6 @@ const AuthService = {
     }
   },
 
-  async fetchAWSCreds() {
-    try {
-      return await AuthApi.getAWSCreds();
-    } catch (error) {
-      console.error("There was an error fetching the creds", error);
-      throw error;
-    }
-  },
-
   async googleLogin(data) {
     try {
       const response = await AuthApi.googleLogin(data);

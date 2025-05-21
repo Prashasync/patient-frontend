@@ -6,7 +6,7 @@ const Emotion = ({ symptomTrackerHistory }) => {
     return <div className="emoji">No emotions tracked yet.</div>;
   }
 
-  const latestEmotion = symptomTrackerHistory[symptomTrackerHistory.length - 1];
+  const latestEmotion = symptomTrackerHistory[0];
 
   return (
     <div className="emoji">

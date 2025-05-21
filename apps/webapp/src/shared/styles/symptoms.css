@@ -1,5 +1,9 @@
 .symptom-tracker {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .background {
   position: absolute;
@@ -27,16 +31,25 @@
 }
 
 .emotion-icon {
-  font-size: 190px;
+  font-size: 320px;
 }
 
 .symptom-tracker h1 {
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .add-symptom {
   display: flex;
   justify-content: center;
+}
+
+.add-symptom button {
+  background-color: #9500FF;
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 13px 98px;
 }
 
 .add-symptom:hover {

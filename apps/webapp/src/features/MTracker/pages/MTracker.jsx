@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Background from "../components/Background";
 import AddSymptom from "../components/AddSymptom";
-import EmotionHistory from "../components/EmotionsHistory";
+// import EmotionHistory from "../components/EmotionsHistory";
 import { useNavigate } from "react-router-dom";
 import Emoji from "../components/Emotion";
 import "../../../shared/styles/symptoms.css";
@@ -22,7 +22,6 @@ const SymptomTrackerPage = () => {
         navigate("/");
       }
       if (response.status === 200) {
-        console.log(response)
         setSymptomTrackerHistory(response.data.symptomHistory);
       }
     } catch (error) {
@@ -36,11 +35,15 @@ const SymptomTrackerPage = () => {
 
   return (
     <div className="symptom-tracker">
-      <h1>Symptom Tracking</h1>
+      <div className="symptom-tracker-header">
+        <h2>Mood Tracker</h2>
+        <h1>How are you feeling today?</h1>
+      </div>
+
       <Background />
       <Emoji symptomTrackerHistory={symptomTrackerHistory} />
       <AddSymptom handleClick={handleClick} />
-      <EmotionHistory symptomTrackerHistory={symptomTrackerHistory} />
+      {/* <EmotionHistory symptomTrackerHistory={symptomTrackerHistory} /> */}
     </div>
   );
 };

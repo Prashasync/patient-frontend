@@ -75,7 +75,7 @@ const AuthApi = {
     try {
       return axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/send-otp`,
-        {data},
+        { data },
         {
           headers: {
             "Content-Type": "application/json",
@@ -86,11 +86,11 @@ const AuthApi = {
       console.error("Error sending OTP:", error);
       throw error;
     }
-  },  
+  },
 
   async verifyOtpApi(data) {
     try {
-      return axios.post(
+      return await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/verify-otp`,
         data,
         {
@@ -102,17 +102,6 @@ const AuthApi = {
       );
     } catch (error) {
       console.error("Error verifying OTP:", error);
-      throw error;
-    }
-  },
-
-  async getAWSCreds() {
-    try {
-      return axios.get(
-        `${process.env.REACT_APP_SERVER_URL}/api/v1/aws_configs`
-      );
-    } catch (error) {
-      console.error("There was an error in the auth api:", error);
       throw error;
     }
   },

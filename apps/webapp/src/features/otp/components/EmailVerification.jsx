@@ -43,7 +43,7 @@ const EmailVerification = ({ user }) => {
 
   setTimeout(() => {
     setResendOtp(true);
-  }, 5000);
+  }, 10000);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ const EmailVerification = ({ user }) => {
         role: "ACCOUNT_VERIFICATION",
       });
 
-      setMessage(response.data.message);
+      setMessage(response.data);
 
       if (response.status !== 200) {
         setTimeout(() => setMessage(""), 3000);

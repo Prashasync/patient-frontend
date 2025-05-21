@@ -4,15 +4,16 @@ import "../../../shared/styles/homeScreenPage.css";
 import gridIcon from "../../../assets/icons/grid-line.svg";
 import searchIcon from "../../../assets/icons/search_line.svg";
 import bellIcon from "../../../assets/icons/Union.png";
-import youlookHappy from "../../../assets/icons/youlookHappy.svg";
 import heartHealth from "../../../assets/icons/heartHealth.svg";
 import Notifications from "../components/Notifications";
 import AuthService from "../../auth/services/authService";
 import { useNavigate } from "react-router-dom";
 import AiChatBot from "../../chat/components/AiChatBotIcon";
+import MTrackerService from "../../MTracker/services/MTrackerService";
 
 const HomeScreenPage = () => {
   const [patient, setPatient] = useState(null);
+  const [inSights, setInSights] = useState([]);
   const navigate = useNavigate();
 
   const fetchUserData = async () => {
@@ -27,8 +28,18 @@ const HomeScreenPage = () => {
     }
   };
 
+  const fetchSymptomTracker = async () => {
+    try {
+      const response = await MTrackerService.getMoodHistory();
+      setInSights(response.data.symptomHistory);
+    } catch (error) {
+      console.error("There was an error: ", error);
+    }
+  };
+
   useEffect(() => {
     fetchUserData();
+    fetchSymptomTracker();
   }, []);
 
   return (
@@ -56,7 +67,8 @@ const HomeScreenPage = () => {
       </div>
       <div className="card-grid">
         <div className="card card-gray">
-          <img src={youlookHappy} alt="Mood" />
+          <p>{inSights && inSights[0]?.emoji_icon}</p>
+          <span>You look {inSights && inSights[0]?.feelings}</span>
         </div>
         <div className="card card-purple">
           <img src={heartHealth} alt="Heart Health" />
