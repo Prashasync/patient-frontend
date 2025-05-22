@@ -7,6 +7,17 @@ const MTrackerService = {
       return response;
     } catch (error) {
       console.error("There was an error inside MTracker service", error);
+      throw error;
+    }
+  },
+
+  async getEmotions(patient_id) {
+    try {
+      const response = await MTrackerApi.getEmotions(patient_id);
+      return response;
+    } catch (error) {
+      console.error("There was an error inside MTracker service:", error);
+      throw error;
     }
   },
 

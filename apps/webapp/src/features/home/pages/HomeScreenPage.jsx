@@ -37,10 +37,23 @@ const HomeScreenPage = () => {
     }
   };
 
+  const fetchInsights = async () => {
+    try {
+      const response = await MTrackerService.getEmotions(patient?.patient_id);
+      console.log(response);
+    } catch (error) {
+      console.error("There was an error: ", error);
+    }
+  };
+
   useEffect(() => {
     fetchUserData();
     fetchSymptomTracker();
   }, []);
+
+  useEffect(() => {
+    fetchInsights();
+  }, [patient]);
 
   return (
     <div className="home-container">

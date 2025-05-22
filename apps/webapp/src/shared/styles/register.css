@@ -1,13 +1,44 @@
 #title {
   padding: 2%;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #ccc;
+  color: #61646b;
+  padding: 12px;
 }
 
 #gender {
   padding: 2%;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #ccc;
+  color: #61646b;
+  padding: 12px;
+}
+
+.form-group input {
+  font-size: 14px;
+  font-weight: 400;
+  color: #61646b;
+}
+
+.form-group select {
+  font-size: 14px;
+}
+
+.custom-select {
+  color: #61646b;
+  appearance: none; /* Hide default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 40px 10px 12px; /* room for the arrow on the right */
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.5 5.5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
 }

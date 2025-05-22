@@ -7,12 +7,40 @@ const EmailVerification = ({ user }) => {
   const [message, setMessage] = useState("");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [resendOtp, setResendOtp] = useState(false);
+  const [countdown, setCountdown] = useState(0);
+  const [resentMessage, setResentMessage] = useState(false);
   const navigate = useNavigate();
+
+  const email = localStorage.getItem("email");
+
+  const getMaskedEmail = () => {
+    if (!email) return "";
+    const [localPart, domain] = email.split("@");
+    if (!localPart || !domain) return email;
+
+    const visible = localPart.slice(0, 2);
+    const masked = "*".repeat(localPart.length - 2);
+    return `${visible}${masked}@${domain}`;
+  };
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      const updatedOtp = [...otp];
+      updatedOtp[index - 1] = "";
+      setOtp(updatedOtp);
+      const prevInput = document.querySelector(
+        `.otp-inputs input:nth-child(${index})`
+      );
+      prevInput?.focus();
+      e.preventDefault();
+    }
+  };
 
   const sendOtp = async () => {
     try {
-      const email = localStorage.getItem("email");
       await AuthService.sendOtp(email);
+      setResendOtp(false);
+      setCountdown(30);
+      setResentMessage(true);
     } catch (error) {
       console.error("Error sending OTP:", error);
     }
@@ -41,10 +69,6 @@ const EmailVerification = ({ user }) => {
     }
   };
 
-  setTimeout(() => {
-    setResendOtp(true);
-  }, 10000);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,6 +82,10 @@ const EmailVerification = ({ user }) => {
       setMessage(response.data);
 
       if (response.status !== 200) {
+        setOtp(["", "", "", "", "", ""]);
+        setTimeout(() => {
+          document.querySelector(".otp-inputs input")?.focus();
+        }, 0);
         setTimeout(() => setMessage(""), 3000);
         return;
       }
@@ -79,31 +107,48 @@ const EmailVerification = ({ user }) => {
   }, [otp]);
 
   useEffect(() => {
-    sendOtp();
+    const initSend = async () => {
+      try {
+        await AuthService.sendOtp(email);
+      } catch (error) {
+        console.error("Initial OTP send failed:", error);
+      }
+    };
+    initSend();
   }, []);
+
+  useEffect(() => {
+    if (countdown === 0) {
+      setResendOtp(true);
+      return;
+    }
+    const timer = setInterval(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [countdown]);
 
   return (
     <div className="email-verification">
       <div className="email-verification-header">
         <h1>Enhance Your Security</h1>
-        <p>
-          Protect your account with an extra layer of security. Enter the
-          verification code sent to{" "}
-          {(() => {
-            const email = localStorage.getItem("email") || "";
-            const [localPart, domain] = email.split("@");
-            if (!localPart || !domain) return email;
 
-            const visible = localPart.slice(0, 2);
-            const masked = "*".repeat(localPart.length - 2);
-            return `${visible}${masked}@${domain}`;
-          })()}
-        </p>
+        {resentMessage ? (
+          <p className="resent-message">
+            A new OTP has been sent to <strong>{getMaskedEmail()}</strong>
+          </p>
+        ) : (
+          <p>
+            Protect your account with an extra layer of security. Enter the
+            verification code sent to <strong>{getMaskedEmail()}</strong>
+          </p>
+        )}
       </div>
+
       <form onSubmit={handleSubmit} className="otp-form">
         <h2>Email Verification</h2>
         <p>Please enter the OTP sent to your email:</p>
-        <div className="otp-inputs" style={{ display: "flex", gap: "0.5rem" }}>
+        <div className="otp-inputs">
           {otp.map((digit, index) => (
             <input
               key={index}
@@ -111,12 +156,7 @@ const EmailVerification = ({ user }) => {
               maxLength="1"
               value={digit}
               onChange={(e) => handleOtpChange(e, index)}
-              style={{
-                width: "2rem",
-                height: "2rem",
-                textAlign: "center",
-                fontSize: "1.5rem",
-              }}
+              onKeyDown={(e) => handleKeyDown(e, index)}
             />
           ))}
         </div>
@@ -124,13 +164,16 @@ const EmailVerification = ({ user }) => {
           <p style={{ color: "red", marginTop: "1rem" }}>{message}</p>
         )}
       </form>
-      {resendOtp && (
+
+      {resendOtp ? (
         <p>
-          Didnt receive the otp?{" "}
+          Didn't receive the OTP?{" "}
           <span className="resend-otp-btn" onClick={sendOtp}>
-            Resend otp
+            Resend OTP
           </span>
         </p>
+      ) : (
+        <p>Resend available in {countdown}s</p>
       )}
     </div>
   );

@@ -20,6 +20,22 @@ const MTrackerApi = {
     }
   },
 
+  async getEmotions(patient_id) {
+    try {
+      return await axios.get(
+        `${process.env.REACT_APP_DOCTOR_URL}/emotion/patient/${patient_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_DOCTOR_ID}`,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("There was an error with the API request: ", error);
+      throw error;
+    }
+  },
+
   async addMood(emotion) {
     try {
       return await axios.post(
