@@ -31,7 +31,15 @@ const MessageDisplayPage = () => {
           <MessageThread key={message.chat_message_id} message={message} />
         ))
       ) : (
-        <h1>No Messages</h1>
+        <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
+  <div className="text-5xl mb-4">💬</div>
+  <h2 className="text-3xl font-bold text-gray-900 mb-3">No Messages Yet</h2>
+  <p className="text-base text-gray-600 mb-1">Your inbox is empty.</p>
+  <p className="text-base text-gray-600 max-w-md">
+    You can reach out to a licensed expert or check in with Tova, your AI companion.
+  </p>
+</div>
+
       )}
       <AiChatBot />
     </div>
