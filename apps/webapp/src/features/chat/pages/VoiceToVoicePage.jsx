@@ -6,15 +6,13 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [audioChunks, setAudioChunks] = useState([]);
   const [typedText, setTypedText] = useState("");
+  const [recordingMessage, setRecordingMessage] = useState(null);
   const audioRef = useRef(null);
+  const indexRef = useRef(null);
 
   const mediaRecorderRef = useRef(null);
-  const {
-    ws,
-    response,
-    showTyping,
-    setShowTyping,
-  } = useContext(WebSocketContext);
+  const { ws, response, showTyping, setShowTyping } =
+    useContext(WebSocketContext);
 
   const toggleRecording = async () => {
     if (isRecording) {
@@ -75,6 +73,14 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
 
   const sendAudio = () => {
     const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+
+    if (audioBlob.size < 1000) {
+      console.warn("Recording too short or empty. Not sending.");
+      addMessage("Recording was too short. Try again.", "system");
+      setShowTyping(false);
+      return;
+    }
+
     const reader = new FileReader();
     setShowTyping(true);
 
@@ -97,7 +103,7 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
     const text = response.data;
     const keywords = response.extracted_keywords;
     const audioData = response.audio;
-    
+
     addMessage(text, "ai", keywords);
     if (audioData && audioRef.current) {
       audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
@@ -106,10 +112,6 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
         .catch((e) => console.error("Error playing audio:", e));
     }
   };
-
-  useEffect(() => {
-    handleResponse();
-  }, [response?.data]);
 
   useEffect(() => {
     if (ws?.readyState === 1) {
@@ -124,26 +126,35 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
   }, []);
 
   useEffect(() => {
-    const text = response.data;
+    const text = response?.data;
+    const keywords = response?.extracted_keywords;
+    const audioData = response?.audio;
+
     if (!text || typeof text !== "string") return;
 
-    let index = 0;
     setTypedText("");
+    setShowTyping(true);
 
-    const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        if (index >= text.length) {
-          clearInterval(interval);
-          return;
-        }
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i >= text.length) {
+        clearInterval(interval);
+        setShowTyping(false);
+        return;
+      }
 
-        setTypedText((prev) => prev + text.charAt(index));
-        index++;
-      }, 40);
-    }, 0);
+      setTypedText((prev) => prev + text.charAt(i));
+      i++;
+    }, 40);
+
+    addMessage(text, "ai", keywords);
+    if (audioData && audioRef.current) {
+      audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
+      audioRef.current.play().catch((e) => console.error("Audio error:", e));
+    }
 
     return () => {
-      clearTimeout(timeout);
+      clearInterval(interval);
       setTypedText("");
     };
   }, [response]);
@@ -155,7 +166,7 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
       <img
         src="/voice-avatar.png"
         // alt="Voice Assistant"
-        className={`center-image ${showTyping ? "pulse-avatar" : ""}`}
+        className={`center-image ${showTyping ? "talking-avatar" : ""}`}
       />
       <div className="ai-text">{typedText}</div>
       <div

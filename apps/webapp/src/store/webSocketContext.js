@@ -19,7 +19,7 @@ export const WebSocketProvider = ({ children, remoteServerUrl, jwtToken }) => {
     try {
       const protocol = remoteServerUrl.startsWith("https") ? "wss:" : "ws:";
       const host = remoteServerUrl.replace(/^https?:\/\//, "");
-      const wsUrl = `${protocol}//${host}/chat-final/${retreivePatientId}`;
+      const wsUrl = `${protocol}//${host}/${retreivePatientId}`;
 
       const websocket = new WebSocket(wsUrl);
       wsRef.current = websocket;

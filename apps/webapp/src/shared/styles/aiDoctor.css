@@ -75,6 +75,7 @@
   flex-direction: column;
   gap: 12px;
   overflow-y: auto;
+  max-height: 100%;
 }
 
 .message {
@@ -278,4 +279,27 @@
   border-radius: 50%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform, box-shadow;
+}
+
+@keyframes talkingPulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.talking-avatar {
+  animation: talkingPulse 1.3s ease-in-out infinite;
+  border-radius: 50%;
 }

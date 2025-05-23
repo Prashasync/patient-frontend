@@ -15,8 +15,8 @@ import { getDateLabel } from "../../../shared/utils/getDateLabel";
 
 const AiDoctorPage = () => {
   const [isRecording, setIsRecording] = useState(false);
-  const [audioChunks, setAudioChunks] = useState([]);
-  const [messageInput, setMessageInput] = useState("");
+  const [audioChunks, setAudioChunks] = useState(null);
+  const [messageInput, setMessageInput] = useState(null);
   const [messages, setMessages] = useState([]);
   const [voiceToVoice, setVoiceToVoice] = useState(false);
   const mediaRecorderRef = useRef(null);
@@ -24,11 +24,14 @@ const AiDoctorPage = () => {
   const audioRef = useRef(null);
   const navigate = useNavigate();
   const { patientId } = useParams();
-  const [updatePatientId, setUpdatePatientId] = useState("");
+  const [updatePatientId, setUpdatePatientId] = useState(null);
   const [messagePopulatedWithDate, setMessagePopulatedWithDate] = useState([]);
   const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
   const lastAiText = lastAiMsg?.text || "";
   const lastAiAudio = lastAiMsg?.audioUrl || "";
+  const [historyLoaded, setHistoryLoaded] = useState(false);
+  const [greetingSent, setGreetingSent] = useState(false);
+
   const {
     ws,
     isConnected,
@@ -51,16 +54,30 @@ const AiDoctorPage = () => {
         return;
       }
 
-      const formattedMessages = response.data.map((msg) => ({
-        id: msg.chat_message_id,
-        text: msg.message_text,
-        sender: msg.sender_id,
-        keywords: msg.keywords || [],
-        time: new Date(msg.timestamp).toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-      }));
+      const formattedMessages = response.data.chat
+        ?.filter((msg) => msg.message_text && msg.message_text.trim() !== "")
+        .map((msg) => {
+          const dateObj = new Date(msg.createdAt);
+          const time = dateObj.toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+          });
+          const date = dateObj.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          });
+
+          return {
+            id: msg.chat_message_id,
+            text: msg.message_text,
+            sender: msg.sender_id,
+            keywords: msg.keywords || [],
+            time: `${time} - ${date}`,
+          };
+        });
+
       setMessages(formattedMessages);
     } catch (err) {
       console.error("Failed to fetch chat history", err);
@@ -68,6 +85,7 @@ const AiDoctorPage = () => {
   };
 
   const handleFeedback = async (id, type) => {
+    console.log(id);
     setMessages((prevMessages) =>
       prevMessages.map((msg) =>
         msg.id === id ? { ...msg, feedback: type } : msg
@@ -100,14 +118,14 @@ const AiDoctorPage = () => {
     const text = response.data;
     const keywords = response.extracted_keywords;
     const audioData = response.audio;
-    
+
     addMessage(text, "ai", keywords);
-    if (audioData && audioRef.current) {
-      audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
-      audioRef.current
-        .play()
-        .catch((e) => console.error("Error playing audio:", e));
-    }
+    // if (audioData && audioRef.current) {
+    //   audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
+    //   audioRef.current
+    //     .play()
+    //     .catch((e) => console.error("Error playing audio:", e));
+    // }
   };
 
   const addMessage = async (text, sender, keywords = []) => {
@@ -202,7 +220,7 @@ const AiDoctorPage = () => {
 
       mediaRecorder.start();
       setIsRecording(true);
-      // addMessage("Recording...", "system");
+      // setMessages("Recording...", "system");
     } catch (error) {
       console.error("Microphone error:", error);
       alert(`Microphone error: ${error.message}`);
@@ -244,30 +262,14 @@ const AiDoctorPage = () => {
     setVoiceToVoice(!voiceToVoice);
   };
 
-  // const groupMessagesByDate = (messages) => {
-  //   console.log(messages);
-  //   return messages.reduce((acc, msg) => {
-  //     const date = new Date(msg.time);
-  //     const label = getDateLabel(date);
-
-  //     if (!acc[label]) acc[label] = [];
-  //     acc[label].push(msg);
-  //     return acc;
-  //   }, {});
-  // };
-  // useEffect(() => {
-  //   const groupedMessages = groupMessagesByDate(messages);
-  //   setMessagePopulatedWithDate(groupedMessages);
-  // }, []);
+  useEffect(() => {
+    connectWebSocket();
+  }, [updatePatientId]);
 
   useEffect(() => {
     setUpdatePatientId(patientId);
     setRetreivePatientId(patientId);
   }, []);
-
-  useEffect(() => {
-    connectWebSocket();
-  }, [updatePatientId]);
 
   useEffect(() => {
     if (response?.data) {
@@ -286,8 +288,13 @@ const AiDoctorPage = () => {
   }, [messages]);
 
   useEffect(() => {
-    fetchAiDoctorHistory();
-  }, []);
+    if (isConnected && !historyLoaded) {
+      fetchAiDoctorHistory();
+      setHistoryLoaded(true);
+    }
+  }, [isConnected]);
+
+  // console.log(chatMessagesRef.current.scrollTop)
 
   return (
     <React.Fragment>
@@ -343,6 +350,7 @@ const AiDoctorPage = () => {
               {messages.map((msg) => (
                 <div
                   key={msg.id}
+                  ref={chatMessagesRef}
                   className={`message ${
                     msg.sender === process.env.REACT_APP_DOCTOR_ID ||
                     msg.sender === "ai"

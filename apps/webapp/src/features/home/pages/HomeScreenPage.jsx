@@ -13,7 +13,7 @@ import MTrackerService from "../../MTracker/services/MTrackerService";
 
 const HomeScreenPage = () => {
   const [patient, setPatient] = useState(null);
-  const [inSights, setInSights] = useState([]);
+  const [inSights, setInSights] = useState(null);
   const navigate = useNavigate();
 
   const fetchUserData = async () => {
