@@ -57,6 +57,7 @@ const RegisterForm = () => {
             defaultValue=""
             id="title"
             name="title"
+            className="custom-select"
           >
             <option value="" disabled>
               Select your title
@@ -100,14 +101,13 @@ const RegisterForm = () => {
             defaultValue=""
             name="gender"
             id="gender"
+            className="custom-select"
           >
             <option value="" disabled>
               Select your gender
             </option>
             <option value="M">Male</option>
             <option value="F">Female</option>
-            {/* <option value="Non-binary">Non Binary</option>
-            <option value="Other">Other</option> */}
           </select>
         </div>
 

@@ -73,8 +73,9 @@ const ChatApi = {
 
   async sendFeedback(data) {
     try {
-      return await axios.get(
+      return await axios.post(
         `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/chat/ai-doctor-feedback`,
+        data,
         {
           withCredentials: true,
           headers: {
@@ -86,7 +87,7 @@ const ChatApi = {
       console.error("Chat API error:", error);
       throw error;
     }
-  }
+  },
 };
 
 export default ChatApi;

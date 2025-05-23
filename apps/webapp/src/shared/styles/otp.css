@@ -34,13 +34,13 @@
 }
 
 .email-verification-header h1 {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 5%;
 }
 
 .resend-otp-btn {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .resend-otp-btn:hover {
@@ -50,7 +50,7 @@
 .otp-inputs {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 17px;
   margin: 20px 0;
 }
 

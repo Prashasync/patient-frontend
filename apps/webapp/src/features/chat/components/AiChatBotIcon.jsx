@@ -11,7 +11,7 @@ const AiChatBotIcon = () => {
   useSocket(roomId);
 
   const handleRedirectAiDoctor = () => {
-    const createRoomId = ["ai-doctor", patient.patient_id].sort().join("/");
+    const createRoomId = `ai-doctor/${patient.patient_id}`;
     setRoomId(createRoomId);
     navigate(`/${createRoomId}`);
   };
@@ -31,6 +31,7 @@ const AiChatBotIcon = () => {
   useEffect(() => {
     fetchPatientData();
   }, []);
+  
   return (
     <img
       onClick={handleRedirectAiDoctor}
