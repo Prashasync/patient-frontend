@@ -16,6 +16,183 @@
   padding: 12px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #f0f3f4; /* light gray background from Figma */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+form {
+  max-width: 90%;
+  width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: transparent; /* background handled by body */
+  border-radius: 20px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #222;
+  font-size: 1rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  background-color: #ffffff; /* input fields are pure white */
+  color: #333;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+
+  appearance: none; /* remove native dropdown */
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23888888' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #999;
+}
+
+input:focus,
+select:focus {
+  border-color: #a300ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(163, 0, 255, 0.12);
+}
+
+/* Dropdown fixes */
+select {
+  height: auto;
+  padding-right: 2.5rem; /* space for custom arrow */
+}
+
+/* Button */
+.primary-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #a300ff;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.primary-button:hover {
+  background-color: #8e00e6;
+  transform: scale(1.01);
+}
+
+.primary-button:active {
+  transform: scale(0.98);
+}
+
+/* Link */
+.more_options {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.more_options a {
+  text-decoration: none;
+  color: #5e4b8b;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.more_options a:hover {
+  color: #3d2c5a;
+}
+
+/* Error and Terms */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #666;
+  margin-top: 1.25rem;
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  form {
+    padding: 3rem 4rem;
+    width: 800px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+form {
+  background-color: transparent;
+  box-shadow: none; /* remove if added */
+}
+body {
+  background-color: #f0f3f4; /* soft gray from Figma */
+}
+
+input, select {
+  background-color: #ffffff; /* pure white boxes */
+}
+* {
+  box-shadow: none !important;
+}
+form::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: transparent;
+  margin: -1px 0 0 0;
+}
+
 .form-group input {
   font-size: 14px;
   font-weight: 400;

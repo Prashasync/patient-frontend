@@ -48,7 +48,7 @@ const RegisterForm = () => {
 
   return (
     <>
-      <h2>Register</h2>
+      <h2>Let's Register You !</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Title</label>
@@ -119,7 +119,7 @@ const RegisterForm = () => {
             id="email"
             name="email"
             type="text"
-            placeholder="Enter your email or phone number"
+            placeholder="Enter your Email or Phone number"
             onChange={handleChange}
           />
         </div>
