@@ -1,17 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaMicrophone, FaStop } from "react-icons/fa";
+import { WebSocketContext } from "../../../store/webSocketContext";
 
-const VoiceToVoicePage = ({
-  text,
-  audioSrc,
-  onClose,
-  webSocket,
-  addMessage,
-}) => {
+const VoiceToVoicePage = ({ onClose, addMessage }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [audioChunks, setAudioChunks] = useState([]);
-  const jwtToken = process.env.REACT_APP_DOCTOR_TOKEN;
+  const [typedText, setTypedText] = useState("");
+  const audioRef = useRef(null);
+
   const mediaRecorderRef = useRef(null);
+  const {
+    ws,
+    response,
+    showTyping,
+    setShowTyping,
+  } = useContext(WebSocketContext);
 
   const toggleRecording = async () => {
     if (isRecording) {
@@ -73,48 +76,88 @@ const VoiceToVoicePage = ({
   const sendAudio = () => {
     const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
     const reader = new FileReader();
-    // setShowTyping(true);
+    setShowTyping(true);
 
     reader.onload = () => {
       const base64Audio = reader.result.split(",")[1];
-      if (
-        webSocket.current &&
-        webSocket.current.readyState === WebSocket.OPEN
-      ) {
-        webSocket.current.send(JSON.stringify({ audio: base64Audio }));
+      if (ws && ws.readyState === 1) {
+        ws.send(JSON.stringify({ audio: base64Audio }));
         console.log("Audio sent to server");
       } else {
         console.error("WebSocket not connected");
         alert("WebSocket not connected. Please refresh the page.");
-        // setShowTyping(false);
+        setShowTyping(false);
       }
     };
 
     reader.readAsDataURL(audioBlob);
   };
 
+  const handleResponse = () => {
+    const text = response.data;
+    const keywords = response.extracted_keywords;
+    const audioData = response.audio;
+    
+    addMessage(text, "ai", keywords);
+    if (audioData && audioRef.current) {
+      audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
+      audioRef.current
+        .play()
+        .catch((e) => console.error("Error playing audio:", e));
+    }
+  };
+
   useEffect(() => {
-    if (webSocket?.readyState === WebSocket.OPEN) {
+    handleResponse();
+  }, [response?.data]);
+
+  useEffect(() => {
+    if (ws?.readyState === 1) {
       try {
-        webSocket.send(JSON.stringify({ type: "auth", token: jwtToken }));
+        console.log("VOICE 2 VOICE ws connected");
       } catch (error) {
-        console.error("Error sending auth message:", error);
+        console.error("Error connecting VOICE 2 VOICE :", error);
       }
     } else {
       console.warn("WebSocket not open. Unable to send token.");
     }
   }, []);
-  
+
+  useEffect(() => {
+    const text = response.data;
+    if (!text || typeof text !== "string") return;
+
+    let index = 0;
+    setTypedText("");
+
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        if (index >= text.length) {
+          clearInterval(interval);
+          return;
+        }
+
+        setTypedText((prev) => prev + text.charAt(index));
+        index++;
+      }, 40);
+    }, 0);
+
+    return () => {
+      clearTimeout(timeout);
+      setTypedText("");
+    };
+  }, [response]);
 
   return (
     <div className="voice-to-voice-screen">
-      <span></span>
+      <audio ref={audioRef} style={{ display: "none" }} />
+
       <img
         src="/voice-avatar.png"
         // alt="Voice Assistant"
-        className="center-image"
+        className={`center-image ${showTyping ? "pulse-avatar" : ""}`}
       />
-      <div className="ai-text">{text}</div>
+      <div className="ai-text">{typedText}</div>
       <div
         className="voice-assistant-btns"
         style={{

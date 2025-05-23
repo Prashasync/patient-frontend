@@ -1,39 +1,47 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import {
   FaMicrophone,
   FaArrowRight,
   FaArrowLeft,
   FaStop,
- 
   FaVoicemail,
 } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../../shared/styles/aiDoctor.css";
 import ChatService from "../services/ChatService";
 import VoiceToVoicePage from "./VoiceToVoicePage";
+import { WebSocketContext } from "../../../store/webSocketContext";
+import { getDateLabel } from "../../../shared/utils/getDateLabel";
 
 const AiDoctorPage = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [audioChunks, setAudioChunks] = useState([]);
   const [messageInput, setMessageInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [showTyping, setShowTyping] = useState(false);
-  const [currentPersona, setCurrentPersona] = useState("general");
-  const [isConnected, setIsConnected] = useState(false);
-  const [patientInfo, setPatientInfo] = useState(null);
   const [voiceToVoice, setVoiceToVoice] = useState(false);
   const mediaRecorderRef = useRef(null);
   const chatMessagesRef = useRef(null);
   const audioRef = useRef(null);
-  const wsRef = useRef(null);
-  const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
-  const lastAiText = lastAiMsg?.text || "";
-  const lastAiAudio = lastAiMsg?.audioUrl || ""; 
-
   const navigate = useNavigate();
   const { patientId } = useParams();
-  const jwtToken = process.env.REACT_APP_DOCTOR_TOKEN;
-  const remoteServerUrl = process.env.REACT_APP_DOCTOR_URL;
+  const [updatePatientId, setUpdatePatientId] = useState("");
+  const [messagePopulatedWithDate, setMessagePopulatedWithDate] = useState([]);
+  const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
+  const lastAiText = lastAiMsg?.text || "";
+  const lastAiAudio = lastAiMsg?.audioUrl || "";
+  const {
+    ws,
+    isConnected,
+    connectWebSocket,
+    setRetreivePatientId,
+    response,
+    transcription,
+    patientInfo,
+    currentPersona,
+    errorMessage,
+    showTyping,
+    setShowTyping,
+  } = useContext(WebSocketContext);
 
   const fetchAiDoctorHistory = async () => {
     try {
@@ -69,81 +77,30 @@ const AiDoctorPage = () => {
     await ChatService.sendFeedback({ messageId: id, type });
   };
 
-  const connectWebSocket = () => {
-    if (wsRef.current) {
-      wsRef.current.close();
+  const handleTranscription = (transcription) => {
+    addMessage(transcription, "user");
+  };
+
+  const sendMessage = (messageInput) => {
+    const message = messageInput.trim();
+    if (!message || !ws || ws.readyState !== WebSocket.OPEN) {
+      alert("Not connected to server or message is empty.");
+      return;
     }
 
     try {
-      const protocol = remoteServerUrl.startsWith("https") ? "wss:" : "ws:";
-      const host = remoteServerUrl.replace(/^https?:\/\//, "");
-      const wsUrl = `${protocol}//${host}/chat-final/${patientId}`;
-
-      console.log("Connecting to WebSocket:", wsUrl);
-      const websocket = new WebSocket(wsUrl);
-      wsRef.current = websocket;
-
-      websocket.onopen = () => {
-        console.log("WebSocket connection opened");
-        setIsConnected(true);
-        websocket.send(JSON.stringify({ token: jwtToken }));
-      };
-
-      websocket.onmessage = (event) => {
-        try {
-          const data = JSON.parse(event.data);
-          console.log(data)
-          setShowTyping(false);
-
-          if (data.error) {
-            console.error("Server error:", data.error);
-            addMessage(`Error: ${data.error}`, "system");
-            return;
-          }
-
-          if (data.transcription) {
-            handleTranscription(data.transcription);
-            return;
-          }
-
-          if (data.patient_info) {
-            setPatientInfo(data.patient_info);
-            return;
-          }
-
-          if (data.response) {
-            if (data.current_persona) {
-              setCurrentPersona(data.current_persona);
-            }
-            handleResponse(data.response, data.extracted_keywords, data.audio);
-          }
-        } catch (error) {
-          console.error("Error parsing message:", error);
-        }
-      };
-
-      websocket.onclose = (event) => {
-        console.log(
-          `WebSocket closed: Code ${event.code}, Reason: ${event.reason}`
-        );
-        setIsConnected(false);
-      };
-
-      websocket.onerror = (error) => {
-        console.error("WebSocket error:", error);
-        setIsConnected(false);
-      };
+      ws.send(JSON.stringify({ text: message }));
     } catch (error) {
-      console.error("Error creating WebSocket:", error);
-      addMessage(`Error connecting to server: ${error.message}`, "system");
+      console.error("Error sending message:", error);
+      setShowTyping(false);
     }
   };
 
-  const handleTranscription = (text) => {
-    addMessage(text, "user");
-  };
-
-  const handleResponse = (text, keywords = [], audioData = null) => {
+  const handleResponse = (response) => {
+    const text = response.data;
+    const keywords = response.extracted_keywords;
+    const audioData = response.audio;
+    
     addMessage(text, "ai", keywords);
     if (audioData && audioRef.current) {
       audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
@@ -182,29 +139,16 @@ const AiDoctorPage = () => {
     }
   };
 
-  const sendMessage = async () => {
+  const handleSendMessage = async () => {
     const message = messageInput.trim();
-    if (
-      !message ||
-      !wsRef.current ||
-      wsRef.current.readyState !== WebSocket.OPEN
-    ) {
-      alert("Not connected to server or message is empty.");
-      return;
-    }
-
-    addMessage(message, "user");
-    setShowTyping(true);
-
     try {
-      console.log(message);
-      wsRef.current.send(JSON.stringify({ text: message }));
+      sendMessage(message);
+      addMessage(message, "user");
+      setMessageInput("");
+      setShowTyping(true);
     } catch (error) {
-      console.error("Error sending message:", error);
-      setShowTyping(false);
+      console.error("There was an error sending the message: ", error);
     }
-
-    setMessageInput("");
   };
 
   const toggleRecording = async () => {
@@ -213,6 +157,16 @@ const AiDoctorPage = () => {
     } else {
       await startRecording();
     }
+  };
+
+  const getPersonaClass = () => `persona-indicator persona-${currentPersona}`;
+  const getPersonaName = () => {
+    const names = {
+      general: "Dr. Ori",
+      psychologist: "Psychologist",
+      dietician: "Dietician",
+    };
+    return names[currentPersona] || "General OPD";
   };
 
   const startRecording = async () => {
@@ -264,13 +218,13 @@ const AiDoctorPage = () => {
 
   const sendAudio = () => {
     const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-    const reader = new FileReader(); 
+    const reader = new FileReader();
     setShowTyping(true);
 
     reader.onload = () => {
       const base64Audio = reader.result.split(",")[1];
-      if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
-        wsRef.current.send(JSON.stringify({ audio: base64Audio }));
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ audio: base64Audio }));
         console.log("Audio sent to server");
       } else {
         console.error("WebSocket not connected");
@@ -286,29 +240,44 @@ const AiDoctorPage = () => {
     navigate("/home");
   };
 
-  const getPersonaClass = () => `persona-indicator persona-${currentPersona}`;
-  const getPersonaName = () => {
-    const names = {
-      general: "Dr. Ori",
-      psychologist: "Psychologist",
-      dietician: "Dietician",
-    };
-    return names[currentPersona] || "General OPD";
-  };
-
   const handleVoiceToVoice = () => {
     setVoiceToVoice(!voiceToVoice);
   };
 
+  // const groupMessagesByDate = (messages) => {
+  //   console.log(messages);
+  //   return messages.reduce((acc, msg) => {
+  //     const date = new Date(msg.time);
+  //     const label = getDateLabel(date);
+
+  //     if (!acc[label]) acc[label] = [];
+  //     acc[label].push(msg);
+  //     return acc;
+  //   }, {});
+  // };
+  // useEffect(() => {
+  //   const groupedMessages = groupMessagesByDate(messages);
+  //   setMessagePopulatedWithDate(groupedMessages);
+  // }, []);
+
+  useEffect(() => {
+    setUpdatePatientId(patientId);
+    setRetreivePatientId(patientId);
+  }, []);
+
   useEffect(() => {
     connectWebSocket();
+  }, [updatePatientId]);
 
-    return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
-    };
-  }, []);
+  useEffect(() => {
+    if (response?.data) {
+      handleResponse(response);
+    }
+  }, [response]);
+
+  useEffect(() => {
+    handleTranscription(transcription);
+  }, [transcription]);
 
   useEffect(() => {
     if (chatMessagesRef.current) {
@@ -321,13 +290,12 @@ const AiDoctorPage = () => {
   }, []);
 
   return (
-    <>
+    <React.Fragment>
       {voiceToVoice ? (
         <VoiceToVoicePage
           text={lastAiText}
           audioSrc={lastAiAudio}
           onClose={() => setVoiceToVoice(false)}
-          webSocket={wsRef.current}
           addMessage={addMessage}
         />
       ) : (
@@ -422,7 +390,7 @@ const AiDoctorPage = () => {
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
             />
-            <button onClick={sendMessage}>
+            <button onClick={handleSendMessage}>
               <FaArrowRight />
             </button>
             <button onClick={toggleRecording}>
@@ -434,7 +402,7 @@ const AiDoctorPage = () => {
           </div>
         </div>
       )}
-    </>
+    </React.Fragment>
   );
 };
 
