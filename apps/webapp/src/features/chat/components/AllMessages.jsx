@@ -27,21 +27,20 @@ const MessageDisplayPage = () => {
   return (
     <div className="message-display">
       {chatHistory && chatHistory.length > 0 ? (
-        chatHistory.map((message) => (
-          <MessageThread key={message.chat_message_id} message={message} />
-        ))
-      ) : (
-        <div className="no-messages-wrapper">
-  <div className="no-messages-icon">💬</div>
-  <h2 className="no-messages-title">No Messages Yet</h2>
-  <p className="no-messages-subtext">Your inbox is empty.</p>
-  <p className="no-messages-subtext">
-    You can reach out to a licensed expert or check in with Tova, your AI companion.
-  </p>
-</div>
-
-
-      )}
+  chatHistory.map((message) => (
+    <MessageThread key={message.chat_message_id} message={message} />
+  ))
+) : (
+  <div className="no-messages-outer">
+    <div className="no-messages-container">
+      <h2 className="no-messages-title">No Messages Yet</h2>
+      <p className="no-messages-subtext">Your inbox is empty.</p>
+      <p className="no-messages-subtext">
+        You can reach out to a licensed expert or check in with Tova, your AI companion.
+      </p>
+    </div>
+  </div>
+)}
       <AiChatBot />
     </div>
   );
