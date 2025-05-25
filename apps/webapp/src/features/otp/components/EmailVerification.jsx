@@ -73,7 +73,6 @@ const EmailVerification = ({ user }) => {
     e.preventDefault();
 
     try {
-      console.log(otp.join(""))
       const response = await AuthService.verifyOtp({
         otp: otp.join(""),
         email: user,

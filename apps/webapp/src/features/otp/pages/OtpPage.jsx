@@ -17,7 +17,7 @@ const OtpPage = () => {
   }, []);
   return (
     <div className="otp">
-      <EmailVerification user={user} />
+      <EmailVerification email={user} />
     </div>
   );
 };

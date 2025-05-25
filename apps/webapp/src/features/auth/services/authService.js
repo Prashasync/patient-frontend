@@ -39,7 +39,7 @@ const AuthService = {
   async registerUser(data) {
     try {
       const response = await AuthApi.registerUserApi(data);
-      localStorage.setItem("user", JSON.stringify(response.data.token));
+      localStorage.setItem("email", response.data.token);
       return {
         message: "REGISTER_SUCCESSFUL",
         data: response.data,
