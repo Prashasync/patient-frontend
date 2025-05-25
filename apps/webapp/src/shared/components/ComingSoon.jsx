@@ -3,25 +3,40 @@ import React from "react";
 export default function ComingSoon() {
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center px-6 text-center">
-      {/* Optional Logo Placeholder */}
-      <div className="w-16 h-16 bg-white rounded-full mb-6" />
+      {/* Emoji Row */}
+      <div className="flex gap-4 text-6xl md:text-7xl mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+        <span role="img" aria-label="smile">
+          😊
+        </span>
+        <span role="img" aria-label="heart eyes">
+          😍
+        </span>
+        <span role="img" aria-label="star eyes">
+          🤩
+        </span>
+      </div>
 
-      {/* Main Heading */}
-      <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
+      {/* Heading */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight">
         Coming Soon
       </h1>
 
-      {/* Subheading */}
-      <p className="text-lg md:text-xl text-gray-400 max-w-xl">
+      {/* Subheading 1 */}
+      <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mb-4">
+        Track your emotions, see trends, and understand your mind—all in one
+        place.
+      </p>
+
+      {/* Subheading 2 */}
+      <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl">
         We’re working hard behind the scenes to bring something exciting your
         way. Stay tuned.
       </p>
 
-      {/* Optional Footer */}
-      <p className="mt-12 text-sm text-gray-600">
+      {/* Footer */}
+      <p className="mt-16 text-xs text-gray-600">
         &copy; {new Date().getFullYear()} All rights reserved.
       </p>
     </div>
   );
 }
-  

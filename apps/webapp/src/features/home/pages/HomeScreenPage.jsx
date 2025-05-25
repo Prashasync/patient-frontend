@@ -7,7 +7,7 @@ import bellIcon from "../../../assets/icons/Union.png";
 import heartHealth from "../../../assets/icons/heartHealth.svg";
 import Notifications from "../components/Notifications";
 import AuthService from "../../auth/services/authService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AiChatBot from "../../chat/components/AiChatBotIcon";
 import MTrackerService from "../../MTracker/services/MTrackerService";
 
@@ -81,7 +81,10 @@ const HomeScreenPage = () => {
       <div className="card-grid">
         <div className="card card-gray">
           <p>{inSights && inSights[0]?.emoji_icon}</p>
-          <span>You look {inSights && inSights[0]?.feelings}</span>
+          {
+            !inSights?.symptomHistory ? (<Link to="/mtracker">Check out the mood tracker!</Link>) : (<span>You look {inSights && inSights[0]?.feelings}</span>)
+          }
+          
         </div>
         <div className="card card-purple">
           <img src={heartHealth} alt="Heart Health" />
