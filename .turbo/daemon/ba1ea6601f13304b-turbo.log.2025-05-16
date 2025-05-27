@@ -1,0 +1,307 @@
+2025-05-16T00:57:24.821822Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie"), AnchoredSystemPathBuf(".turbo/cookies/1.cookie")}
+2025-05-16T00:57:24.821886Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-05-16T01:13:16.490256Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:13:16.496192Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:36.177191Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:36.177312Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:39.956194Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:39.956443Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:40.105592Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:40.105622Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:40.105900Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:36:51.977432Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:51.977536Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:53.477052Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:53.477077Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:54.880754Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:54.880940Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:55.019228Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:55.019251Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:55.019394Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:36:56.576965Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:56.576991Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:58.179933Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:58.179954Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:58.496346Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:36:58.496369Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:36:58.496488Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:37:04.108583Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:04.108682Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:37:06.983132Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:06.983156Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:37:07.172030Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:07.172052Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:37:07.172205Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:37:25.084852Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:25.084945Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:37:25.295922Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:25.295938Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:37:25.296037Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:37:29.878364Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:37:29.878387Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:44:56.217082Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:44:56.217179Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:02.019486Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:02.019539Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:03.125565Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:03.125607Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:03.285691Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:03.285713Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:03.285850Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:45:11.021340Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:11.021387Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:11.217804Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:11.217828Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:11.218105Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:45:25.718531Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:25.718559Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:25.897008Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:25.897029Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:25.897164Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:45:53.220077Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:53.220399Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:45:58.032349Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:45:58.032611Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:00.047683Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:00.047707Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:00.047903Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:00.621344Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:00.621374Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:00.802251Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:00.802841Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:00.802851Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:00.802963Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:03.320812Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:03.320909Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:03.820169Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:03.820190Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:03.898216Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:04.120261Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:04.120281Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:04.217601Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:04.420852Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:04.420878Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:04.491190Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:06.824157Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:06.824180Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:09.643473Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:09.643499Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:09.864346Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:09.864364Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:09.865996Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:09.921269Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:09.921283Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:10.059850Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:10.059873Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:10.060132Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:10.820215Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:10.820233Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.020424Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.020446Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.120034Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.227621Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.227709Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.462027Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.462664Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.462678Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.463087Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.521413Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.521432Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.759947Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.760115Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.760121Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.760262Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.820614Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.820763Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.922050Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:11.922233Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:11.922241Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:11.922335Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:15.420455Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:15.420479Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:17.322521Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:17.322542Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:17.490137Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:17.490323Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:17.490333Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:17.490447Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:21.124596Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:21.124619Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:21.930767Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:21.930889Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:22.044397Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:22.044424Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:22.044640Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:46:38.620999Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:38.621097Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:45.022169Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:45.022656Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:45.179333Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:46:45.179355Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:46:45.179476Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:47:00.321908Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:00.322078Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:00.541772Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:00.541797Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:00.542059Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:47:02.422939Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:02.422961Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:07.027163Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:07.028961Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:08.823380Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:08.823890Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:08.974997Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:08.975015Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:08.975208Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:47:39.196028Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:39.196459Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:39.350555Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:39.350573Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:39.350728Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T01:47:43.524169Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:43.524192Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:43.736811Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T01:47:43.736833Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T01:47:43.736981Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:07:52.980035Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:07:52.980215Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:07:56.179288Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:07:56.179311Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:07:56.380052Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:07:56.380073Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:07:56.380213Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:07:57.979567Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:07:57.979620Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:09:37.788592Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:09:37.789325Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:09:48.888663Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:09:48.888709Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:09:57.083704Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:09:57.083883Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:09:58.883828Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:09:58.883854Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:03.589799Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:03.591787Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:03.750300Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:03.750322Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:03.750500Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:10:12.688201Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:12.688224Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:12.825297Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:12.825319Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:12.825455Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:10:19.086493Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:19.086583Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:23.484430Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:23.484453Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:31.084783Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:31.084878Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:39.586677Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:39.586710Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:41.589309Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:41.589353Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:10:48.185341Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:10:48.185363Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:11:00.395071Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:11:00.395608Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:11:06.486648Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:11:06.486673Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:11:06.684594Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:11:06.684614Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:11:06.684726Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:11:08.386518Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:11:08.386542Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:11:09.185981Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:11:09.186003Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:15:49.999205Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:15:49.999223Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:15:50.199093Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:15:50.199116Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:15:50.199262Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:15:57.593765Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:15:57.593795Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:15:57.779815Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:15:57.779837Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:15:57.779942Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:15:58.894833Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:15:58.894910Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:01.194679Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:01.194701Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:08.696069Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:08.696102Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:14.596498Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:14.596547Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:14.742412Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:14.742432Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:14.742547Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:16:39.797132Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:39.797233Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:16:43.596638Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:16:43.596821Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:13.296596Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:13.296618Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:21.397049Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:21.397147Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:21.543002Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:21.543027Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:21.543276Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:17:24.097592Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:24.097615Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:34.796132Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:34.796155Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:52.199583Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:52.199632Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:56.202918Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:56.202936Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:17:58.597811Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:17:58.597836Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:07.405643Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:07.405701Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:07.578532Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:07.578556Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:07.578785Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:18:08.698953Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:08.698980Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:11.598113Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:11.598132Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:11.721256Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:11.721277Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:11.721394Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:18:15.499160Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:15.499514Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:18:17.198520Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:18:17.198544Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:20:54.713366Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:20:54.713387Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:20:54.919516Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:20:54.919539Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:20:54.919700Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:22:43.216738Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:22:43.216762Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:22:46.416972Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:22:46.416994Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:27:41.726263Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:27:41.726283Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:27:45.951105Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:27:45.951139Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:27:48.527201Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:27:48.527223Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:27:54.625964Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:27:54.625985Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:09.933282Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:09.933307Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:10.061974Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:10.061990Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:10.062082Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:28:21.727133Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:21.727166Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:39.844689Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:39.844743Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:40.087293Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:40.087324Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:40.087659Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-16T02:28:41.527316Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:41.527334Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:41.654298Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/chat/pages/AiDoctorPage.jsx")}
+2025-05-16T02:28:41.654317Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-16T02:28:41.654431Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun

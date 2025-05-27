@@ -1,0 +1,68 @@
+.onboarding-questions {
+  padding: 5px;
+}
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sub-title h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.sub-title h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.onboarding-questions form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mood-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.mood-container label {
+  width: 100%;
+}
+.mood-container.selected {
+  background-color: #979797;  
+  border-color: #979797;  
+  color: white;
+}
+.onboarding-questions button {
+  margin-top: 20px;
+}
+
+.onboarding-questions .forward {
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.redirect-options {
+  display: flex;
+}
+
+.redirect-options button {
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 30px 10px;
+  width: 50%;
+}

@@ -1,0 +1,63 @@
+
+> webapp@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+[BABEL] Note: The code generator has deoptimised the styling of /Users/shamirgibbons/Desktop/prasha-sync/prasha-sync-frontend/apps/webapp/src/assets/icons/happy-face.svg as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of undefined as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/shamirgibbons/Desktop/prasha-sync/prasha-sync-frontend/apps/webapp/src/assets/icons/neutral-face.svg as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of undefined as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/shamirgibbons/Desktop/prasha-sync/prasha-sync-frontend/apps/webapp/src/assets/icons/beaming-face-with-smiling-eyes.svg as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of undefined as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/shamirgibbons/Desktop/prasha-sync/prasha-sync-frontend/apps/webapp/src/assets/icons/disappointed-face.svg as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of undefined as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/shamirgibbons/Desktop/prasha-sync/prasha-sync-frontend/apps/webapp/src/assets/icons/tired-face.svg as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of undefined as it exceeds the max of 500KB.
+Compiled with warnings.
+
+[eslint] 
+src/features/MTracker/pages/MTracker.jsx
+  Line 35:6:  React Hook useEffect has a missing dependency: 'retreiveSymptomTrackerHistory'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/chat/components/AllMessages.jsx
+  Line 25:6:  React Hook useEffect has a missing dependency: 'fetchChatHistory'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/home/pages/HomeScreenPage.jsx
+  Line 33:6:  React Hook useEffect has a missing dependency: 'fetchUserData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/onboarding/components/QuestionOne.jsx
+  Line 72:6:  React Hook useEffect has a missing dependency: 'checkOnboardingStatus'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/onboarding/components/QuestionTwo.jsx
+  Line 73:6:  React Hook useEffect has a missing dependency: 'checkOnboardingStatus'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/onboarding/pages/OnboardingPage.jsx
+  Line 43:6:  React Hook useEffect has a missing dependency: 'fetchUserProgress'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/otp/pages/OtpPage.jsx
+  Line 18:6:  React Hook useEffect has a missing dependency: 'navigate'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/features/timeline/pages/TimelineListPage.jsx
+  Line 28:6:  React Hook useEffect has a missing dependency: 'fetchUserData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  172.62 kB  build/static/js/main.9bbc5795.js
+  6.17 kB    build/static/css/main.599998b0.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+

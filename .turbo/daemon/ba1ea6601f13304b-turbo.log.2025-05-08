@@ -1,0 +1,182 @@
+2025-05-08T18:06:26.703171Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie"), AnchoredSystemPathBuf(".turbo/cookies/1.cookie")}
+2025-05-08T18:06:26.703241Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-05-08T19:02:11.340857Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:02:11.342059Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:02:14.013878Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:02:14.014189Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:02:14.156869Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:12:25.028892Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:12:25.037296Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:12:53.506261Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:12:53.510266Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:12:57.386047Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:12:57.386079Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:12:57.612252Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:12:57.612266Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:12:57.614856Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:12:57.887093Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:12:57.887239Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:01.884343Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:01.884358Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:02.042237Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:02.042260Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:02.042475Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:13:10.187729Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:10.187911Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:13.788039Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:13.788252Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:18.186727Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:18.186754Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:18.353567Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:18.353590Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:18.353703Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:13:34.884624Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:34.884646Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:36.284127Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:36.284157Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:54.984132Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:54.984172Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:55.325619Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:13:55.325640Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:13:55.325732Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:14:09.041151Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:09.041173Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:14:09.287642Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:09.287668Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:14:09.287943Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:14:18.050792Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:18.050853Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:14:18.279713Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:18.279735Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:14:18.283390Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:14:27.286098Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:27.286114Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:14:35.384285Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:14:35.384305Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:15:13.893887Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:15:13.894102Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:15:15.684089Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:15:15.684448Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:26.415041Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:16:26.415207Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:27.385579Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:16:27.385594Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:27.497870Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:16:28.500486Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:16:28.500508Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:30.384616Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:16:30.384643Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:30.612843Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:16:30.612864Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:16:30.613204Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:17.689211Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:17.689387Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:17.986462Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:17.986484Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:17.992714Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:20.708066Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:20.708083Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:20.808682Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:37.188950Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:37.189001Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:45.794342Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:45.794565Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:45.967548Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:45.967573Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:45.967747Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:49.588717Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:49.588737Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:51.589416Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:51.589468Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:52.326510Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:52.326528Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:52.326614Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:52.588706Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:52.588785Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:52.671494Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:21:54.594907Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:54.594965Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:58.088917Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:58.088944Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:58.188958Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:21:58.188984Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:21:58.276771Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:22:04.489711Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:22:04.489732Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:22:18.089654Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:22:18.089675Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:23:46.490616Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:23:46.490726Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:23:51.391765Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:23:51.391780Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:23:51.542175Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:23:51.542198Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:23:51.542460Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:23:52.597910Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:23:52.597933Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:08.881208Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:08.882831Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:12.870598Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:12.870632Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:13.063183Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:13.063227Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:13.063990Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:53:19.964953Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:19.965111Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:21.265130Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:21.265191Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:24.765092Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:24.765198Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:53:31.965000Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:53:31.965024Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:20.768377Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:20.768506Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:26.469383Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:26.469411Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:31.466086Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:31.466151Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:31.671582Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:31.671601Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:31.681943Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:54:36.566009Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:36.566319Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:36.741383Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:36.741404Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:36.741517Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:54:37.865945Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:37.865970Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:38.023545Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:38.023561Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:38.023690Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:54:40.566367Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:40.566394Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:40.698252Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:54:40.698272Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:54:40.702682Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:55:36.969259Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/api/AppointmentsApi.js")}
+2025-05-08T19:55:36.969284Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:23.467482Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:23.467542Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:36.771420Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:36.772592Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:36.944045Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:36.944061Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:36.944209Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:56:40.970030Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:40.970576Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:41.207611Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:41.207627Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:41.247047Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-05-08T19:56:50.267421Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:50.267568Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:56:50.667705Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:56:50.667727Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:57:51.872694Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:57:51.872723Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T19:57:53.067935Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T19:57:53.067961Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T20:19:33.320075Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T20:19:33.322985Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T20:19:33.590194Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/webapp/src/features/appointment/pages/DoctorAvailability.jsx")}
+2025-05-08T20:19:33.590221Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("webapp"), path: AnchoredSystemPathBuf("apps/webapp") }}))
+2025-05-08T20:19:33.604635Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun

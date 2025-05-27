@@ -1,0 +1,22 @@
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: #efeff0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  list-style-type: none;
+  color: black;
+}
+
+.nav-bar ul {
+  padding: 0 4%;
+}

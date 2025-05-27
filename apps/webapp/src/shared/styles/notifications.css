@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+  .w-10 {
+    width: 2rem;
+    height: 2rem;
+  }
+}

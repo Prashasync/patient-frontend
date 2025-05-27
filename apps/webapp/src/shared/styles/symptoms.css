@@ -1,0 +1,175 @@
+.symptom-tracker {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.background {
+  position: absolute;
+  top: 0;
+  z-index: -99999;
+  color: #a09898;
+}
+
+.background svg {
+  width: inherit;
+  height: inherit;
+}
+
+.emoji {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.emoji svg {
+  height: 100%;
+}
+
+.emotion-icon {
+  font-size: 320px;
+}
+
+.symptom-tracker h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.add-symptom {
+  display: flex;
+  justify-content: center;
+}
+
+.add-symptom button {
+  background-color: #9500ff;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 13px 98px;
+}
+
+.add-symptom:hover {
+  cursor: pointer;
+}
+
+.emotions-container {
+  margin-top: 15px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+.emotion-background {
+  padding: 30px;
+}
+
+.emotion-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-item {
+  background-color: #ddd;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.emotion-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 12px;
+}
+
+.emotion-questionare {
+  padding: 60px;
+}
+
+.emotion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emotions-list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.emotions-list li {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emotions-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.emotion-background {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.note-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.note-textarea {
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  width: 95%;
+  margin: 15px 0;
+  padding: 11px;
+}
+
+.skip {
+  padding-top: 15px;
+}
+
+.notes-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.notes-btn button {
+  width: 45%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.note-submit-button {
+  background-color: purple;
+  color: white;
+}
+
+.mood_score {
+  font-size: small;
+}
