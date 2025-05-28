@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../../shared/styles/login.css';
@@ -49,6 +49,10 @@ const LoginPage = () => {
       setTimeout(() => setError(''), 3000);
     }
   };
+
+  useEffect(()=>{
+    scrollTo(0,0);
+  },[])
 
   return (
     <div className="main-container">

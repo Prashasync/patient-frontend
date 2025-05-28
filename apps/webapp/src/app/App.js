@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../shared/styles/App.css";
 import HomeScreenPage from "../features/home/pages/HomeScreenPage";
-import DashboardPage from "../features/dashboardScreens/pages/DashboardPage";
 import LoginPage from "../features/auth/pages/LoginPage";
 import OnboardingPage from "../features/onboarding/pages/OnboardingPage";
 import RegisterPage from "../features/auth/pages/RegisterPage";
@@ -13,7 +12,6 @@ import NotesForEmotionsPage from "../features/MTracker/pages/NotesForEmotionsPag
 import RecordAVoiceNotePage from "../features/MTracker/pages/RecordAVoiceNotePage";
 import ForgotPasswordPage from "../features/auth/pages/ForgotPasswordPage";
 import ChatPage from "../features/chat/pages/ChatPage";
-
 import SplashScreen from "../features/splashScreens/pages/SplashScreen";
 import SplashScreen1 from "../features/splashScreens/pages/SplashScreen1";
 import SplashScreen2 from "../features/splashScreens/pages/SplashScreen2";
@@ -25,6 +23,7 @@ import ComingSoon from "../shared/components/ComingSoon";
 import VerificationSuccessful from "../features/otp/components/VerificationSuccessful";
 import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
 import { WebSocketProvider } from "../store/webSocketContext";
+import StatsPage from "../features/dashboardScreens/pages/StatsPage";
 
 const App = () => {
   return (
@@ -70,7 +69,7 @@ const App = () => {
             {/* Main Screens */}
             <Route element={<BottomNavBar />}>
               <Route path="/home" element={<HomeScreenPage />}></Route>
-              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/stats" element={<StatsPage />} />
               <Route path="/appointments" element={<ComingSoon />} />
               <Route path="/mtracker" element={<MTracker />} />
               <Route path="/chat" element={<ChatPage />} />

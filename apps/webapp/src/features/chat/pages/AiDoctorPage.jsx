@@ -11,7 +11,6 @@ import "../../../shared/styles/aiDoctor.css";
 import ChatService from "../services/ChatService";
 import VoiceToVoicePage from "./VoiceToVoicePage";
 import { WebSocketContext } from "../../../store/webSocketContext";
-import { getDateLabel } from "../../../shared/utils/getDateLabel";
 
 const AiDoctorPage = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -25,12 +24,11 @@ const AiDoctorPage = () => {
   const navigate = useNavigate();
   const { patientId } = useParams();
   const [updatePatientId, setUpdatePatientId] = useState(null);
-  const [messagePopulatedWithDate, setMessagePopulatedWithDate] = useState([]);
   const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
   const lastAiText = lastAiMsg?.text || "";
   const lastAiAudio = lastAiMsg?.audioUrl || "";
+  const [introduction, setIntroduction] = useState(false);
   const [historyLoaded, setHistoryLoaded] = useState(false);
-  const [greetingSent, setGreetingSent] = useState(false);
 
   const {
     ws,
@@ -117,15 +115,14 @@ const AiDoctorPage = () => {
   const handleResponse = (response) => {
     const text = response.data;
     const keywords = response.extracted_keywords;
-    const audioData = response.audio;
-
+    if (
+      response.extracted_keywords.includes("greeting", "introduction") &&
+      localStorage.getItem("introduction")
+    ) {
+      return;
+    }
+    localStorage.setItem("introduction", true);
     addMessage(text, "ai", keywords);
-    // if (audioData && audioRef.current) {
-    //   audioRef.current.src = `data:audio/mp3;base64,${audioData}`;
-    //   audioRef.current
-    //     .play()
-    //     .catch((e) => console.error("Error playing audio:", e));
-    // }
   };
 
   const addMessage = async (text, sender, keywords = []) => {
@@ -220,7 +217,6 @@ const AiDoctorPage = () => {
 
       mediaRecorder.start();
       setIsRecording(true);
-      // setMessages("Recording...", "system");
     } catch (error) {
       console.error("Microphone error:", error);
       alert(`Microphone error: ${error.message}`);
@@ -283,7 +279,7 @@ const AiDoctorPage = () => {
 
   useEffect(() => {
     if (chatMessagesRef.current) {
-      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
+      chatMessagesRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
@@ -293,8 +289,6 @@ const AiDoctorPage = () => {
       setHistoryLoaded(true);
     }
   }, [isConnected]);
-
-  // console.log(chatMessagesRef.current.scrollTop)
 
   return (
     <React.Fragment>
@@ -314,7 +308,6 @@ const AiDoctorPage = () => {
               <FaArrowLeft />
             </button>
             <h2 className="chat-title">
-              Healthcare Chat{" "}
               <span className={getPersonaClass()}>{getPersonaName()}</span>
             </h2>
             <div className="connection-status">
@@ -324,7 +317,7 @@ const AiDoctorPage = () => {
             </div>
           </div>
 
-          <div className="chat-body" ref={chatMessagesRef}>
+          <div className="chat-body">
             {patientInfo && (
               <div className="sidebar">
                 <div className="patient-info">
@@ -381,6 +374,7 @@ const AiDoctorPage = () => {
                       </button>
                     </div>
                   )}
+                  <div ref={chatMessagesRef} />
                 </div>
               ))}
               {showTyping && (

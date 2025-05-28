@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthService from "../services/authService"
+import AuthService from "../services/authService";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({});
@@ -45,6 +45,10 @@ const RegisterForm = () => {
       setTimeout(() => setMessage(""), 3000);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -155,7 +159,7 @@ const RegisterForm = () => {
         </button>
 
         <div className="more_options">
-          <Link to="/login">Already A User</Link>
+          <Link to="/login">Already A User?</Link>
         </div>
         {message && <p className="error-message">{message}</p>}
         <p>By clicking you accept the terms of the Privacy Policy</p>

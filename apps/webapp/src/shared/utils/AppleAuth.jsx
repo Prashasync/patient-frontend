@@ -12,7 +12,8 @@ const AppleLoginButton = () => {
         onClick={handleClick}
         className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg hover:opacity-90 transition"
       >
-        <Apple size={20} /> Login via apple Id
+        Login via Apple
+        <Apple size={20} />
       </button>
     </div>
   );

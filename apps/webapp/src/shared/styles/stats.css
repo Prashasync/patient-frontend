@@ -1,0 +1,92 @@
+/* DashboardPage.css */
+
+.dashboard {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menu-icons,
+.utility-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dashboard-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-greeting {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.dashboard-subtext {
+  font-size: 1.125rem;
+}
+
+.last-section {
+  margin-bottom: 5rem;
+}
+
+.mood-chart-container {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem;          /* p-4 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.mood-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.mood-chart-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;    /* font-semibold */
+}
+
+.mood-chart-buttons {
+  display: flex;
+}
+
+.mood-chart-button {
+  padding: 0.25rem 0.75rem;  /* py-1 px-3 */
+  margin: 0 0.25rem;         /* mx-1 */
+  border-radius: 9999px;     /* rounded-full */
+  font-size: 0.875rem;       /* text-sm */
+  color: black;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.mood-chart-button.active {
+  background-color: #7C3AED;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.mood-chart-graph {
+  height: 12rem; /* h-48 */
+}

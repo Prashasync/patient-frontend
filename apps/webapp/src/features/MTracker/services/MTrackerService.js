@@ -1,4 +1,4 @@
-import MTrackerApi from '../apis/MTrackerApi';
+import MTrackerApi from "../apis/MTrackerApi";
 
 const MTrackerService = {
   async getMoodScore(patient) {
@@ -6,7 +6,7 @@ const MTrackerService = {
       const response = await MTrackerApi.getMoodScore(patient);
       return response;
     } catch (error) {
-      console.error('There was an error inside MTracker service', error);
+      console.error("There was an error inside MTracker service", error);
       throw error;
     }
   },
@@ -16,7 +16,7 @@ const MTrackerService = {
       const response = await MTrackerApi.getMoodHistory();
       return response;
     } catch (error) {
-      console.error('There was an error inside MTracker service', error);
+      console.error("There was an error inside MTracker service", error);
       throw error;
     }
   },
@@ -26,7 +26,16 @@ const MTrackerService = {
       const response = await MTrackerApi.getEmotions(patient_id);
       return response;
     } catch (error) {
-      console.error('There was an error inside MTracker service:', error);
+      console.error("There was an error inside MTracker service:", error);
+      throw error;
+    }
+  },
+
+  async getInsights(patient_id) {
+    try {
+      return await MTrackerApi.getInsights(patient_id);
+    } catch (error) {
+      console.error("There was an error inside the mtracker service: ", error);
       throw error;
     }
   },
@@ -34,10 +43,9 @@ const MTrackerService = {
   async addMood(emotion) {
     try {
       const response = await MTrackerApi.addMood(emotion);
-      console.log(response);
       return response;
     } catch (error) {
-      console.error('There was an error inside MTracker service:', error);
+      console.error("There was an error inside MTracker service:", error);
     }
   },
 
@@ -45,7 +53,7 @@ const MTrackerService = {
     try {
       return await MTrackerApi.addMoodCause(data);
     } catch (error) {
-      console.error('There was an error inside the service: ', error);
+      console.error("There was an error inside the service: ", error);
       throw error;
     }
   },
@@ -54,7 +62,7 @@ const MTrackerService = {
     try {
       return await MTrackerApi.addMoodNotes(data);
     } catch (error) {
-      console.error('Error inside the Service: ', error);
+      console.error("Error inside the Service: ", error);
       throw error;
     }
   },
@@ -63,7 +71,7 @@ const MTrackerService = {
     try {
       return await MTrackerApi.addMoodVoiceNote(data);
     } catch (error) {
-      console.error('There was an error inside the service: ', error);
+      console.error("There was an error inside the service: ", error);
       throw error;
     }
   },

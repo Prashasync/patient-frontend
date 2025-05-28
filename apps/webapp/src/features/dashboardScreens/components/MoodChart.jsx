@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
-const MoodChart = () => {
+const MoodChart = ({ userData }) => {
+  console.log(userData)
   const [selectedView, setSelectedView] = useState("Week");
 
   const dataSets = {
@@ -104,18 +105,15 @@ const MoodChart = () => {
   const views = ["Day", "Week", "Month", "Year"];
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-md">
-      {/* Heading and Toggle Buttons */}
-      <div className="flex mb-4 justify-between items-center flex-wrap">
-        <h2 className="text-lg font-semibold">Mood Chart</h2>
-        <div className="flex">
+    <div className="mood-chart-container">
+      <div className="mood-chart-header">
+        <h2 className="mood-chart-title">Mood Chart</h2>
+        <div className="mood-chart-buttons">
           {views.map((view) => (
             <button
               key={view}
-              className={`px-3 py-1 mx-1 rounded-full text-sm transition duration-300 ${
-                selectedView === view
-                  ? "bg-[#7C3AED] text-white shadow-md"
-                  : "bg-gray-100 text-black"
+              className={`mood-chart-button ${
+                selectedView === view ? "active" : ""
               }`}
               onClick={() => setSelectedView(view)}
             >
@@ -124,9 +122,7 @@ const MoodChart = () => {
           ))}
         </div>
       </div>
-
-      {/* Mood Chart */}
-      <div className="h-48">
+      <div className="mood-chart-graph">
         <Line key={selectedView} data={chartData} options={options} />
       </div>
     </div>

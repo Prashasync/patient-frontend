@@ -99,7 +99,7 @@ const AuthService = {
   async googleLogin(data) {
     try {
       const response = await AuthApi.googleLogin(data);
-      localStorage.setItem("email", JSON.stringify(response.data.user.email));
+      localStorage.setItem("email", response.data.user.email);
       return {
         message: "GOOGLE_LOGIN_SUCCESS",
         data: response.data,
