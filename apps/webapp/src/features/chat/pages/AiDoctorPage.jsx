@@ -27,8 +27,8 @@ const AiDoctorPage = () => {
   const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
   const lastAiText = lastAiMsg?.text || "";
   const lastAiAudio = lastAiMsg?.audioUrl || "";
-  const [introduction, setIntroduction] = useState(false);
   const [historyLoaded, setHistoryLoaded] = useState(false);
+  const audioChunksRef = useRef([]);
 
   const {
     ws,
@@ -51,6 +51,8 @@ const AiDoctorPage = () => {
         navigate("/");
         return;
       }
+
+      console.log(response.data.chat);
 
       const formattedMessages = response.data.chat
         ?.filter((msg) => msg.message_text && msg.message_text.trim() !== "")
@@ -83,7 +85,6 @@ const AiDoctorPage = () => {
   };
 
   const handleFeedback = async (id, type) => {
-    console.log(id);
     setMessages((prevMessages) =>
       prevMessages.map((msg) =>
         msg.id === id ? { ...msg, feedback: type } : msg
@@ -207,7 +208,9 @@ const AiDoctorPage = () => {
       setAudioChunks([]);
 
       mediaRecorder.ondataavailable = (event) => {
-        setAudioChunks((prev) => [...prev, event.data]);
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
       };
 
       mediaRecorder.onstop = () => {
@@ -231,7 +234,8 @@ const AiDoctorPage = () => {
   };
 
   const sendAudio = () => {
-    const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+    const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
+    audioChunksRef.current = [];
     const reader = new FileReader();
     setShowTyping(true);
 

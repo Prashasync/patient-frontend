@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../shared/styles/bottomNavBar.css";
 import "../../../shared/styles/homeScreenPage.css";
-import gridIcon from "../../../assets/icons/grid-line.svg";
-import searchIcon from "../../../assets/icons/search_line.svg";
-import bellIcon from "../../../assets/icons/Union.png";
-import heartHealth from "../../../assets/icons/heartHealth.svg";
 import Notifications from "../components/Notifications";
 import AuthService from "../../auth/services/authService";
 import { Link, useNavigate } from "react-router-dom";
 import AiChatBot from "../../chat/components/AiChatBotIcon";
 import MTrackerService from "../../MTracker/services/MTrackerService";
+import HeaderIcons from "../../../assets/HeaderIcons";
 
 const HomeScreenPage = () => {
   const [patient, setPatient] = useState(null);
@@ -64,23 +61,7 @@ const HomeScreenPage = () => {
 
   return (
     <div className="home-container">
-      <div className="home-header">
-        <button>
-          <img src={gridIcon} alt="Menu" className="header-button-icon" />
-        </button>
-        <div className="header-buttons">
-          <button>
-            <img src={searchIcon} alt="Search" className="header-button-icon" />
-          </button>
-          <button>
-            <img
-              src={bellIcon}
-              alt="Notifications"
-              className="header-button-icon"
-            />
-          </button>
-        </div>
-      </div>
+      <HeaderIcons />
       <div className="greeting-text">
         Hello, {patient && `${patient.first_name} ${patient.last_name}`}.<br />
         You’ve taken a step to care for yourself.

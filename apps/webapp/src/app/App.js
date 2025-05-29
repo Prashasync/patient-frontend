@@ -24,6 +24,7 @@ import VerificationSuccessful from "../features/otp/components/VerificationSucce
 import AiDoctorPage from "../features/chat/pages/AiDoctorPage";
 import { WebSocketProvider } from "../store/webSocketContext";
 import StatsPage from "../features/dashboardScreens/pages/StatsPage";
+import AccountDetailsPage from "../features/settings/pages/AccountDetailsPage";
 
 const App = () => {
   return (
@@ -82,6 +83,10 @@ const App = () => {
             <Route
               path="/verification-successful"
               element={<VerificationSuccessful />}
+            />
+            <Route
+              path="/account-details"
+              element={<AccountDetailsPage />}
             />
             <Route
               path="*"

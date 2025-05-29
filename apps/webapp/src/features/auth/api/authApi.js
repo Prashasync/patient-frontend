@@ -36,6 +36,18 @@ const AuthApi = {
     }
   },
 
+  async logout() {
+    try {
+      return axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/logout`,
+        {},
+        { withCredentials: true }
+      );
+    } catch (error) {
+      console.error("There was an error with auth api: ", error);
+    }
+  },
+
   async googleLogin(response) {
     try {
       return axios.post(

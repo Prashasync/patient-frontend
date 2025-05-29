@@ -1,10 +1,9 @@
-/* DashboardPage.css */
-
 .dashboard {
   min-height: 100vh;
-  background-color: #ffffff;
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
 }
 
 .dashboard-header {
@@ -48,7 +47,7 @@
 .mood-chart-container {
   background-color: white;
   border-radius: 0.75rem; /* rounded-xl */
-  padding: 1rem;          /* p-4 */
+  padding: 1rem; /* p-4 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
 }
 
@@ -62,7 +61,7 @@
 
 .mood-chart-title {
   font-size: 1.125rem; /* text-lg */
-  font-weight: 600;    /* font-semibold */
+  font-weight: 600; /* font-semibold */
 }
 
 .mood-chart-buttons {
@@ -70,10 +69,10 @@
 }
 
 .mood-chart-button {
-  padding: 0.25rem 0.75rem;  /* py-1 px-3 */
-  margin: 0 0.25rem;         /* mx-1 */
-  border-radius: 9999px;     /* rounded-full */
-  font-size: 0.875rem;       /* text-sm */
+  padding: 0.25rem 0.75rem; /* py-1 px-3 */
+  margin: 0 0.25rem; /* mx-1 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.875rem; /* text-sm */
   color: black;
   background-color: #f3f4f6; /* bg-gray-100 */
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -82,7 +81,7 @@
 }
 
 .mood-chart-button.active {
-  background-color: #7C3AED;
+  background-color: #7c3aed;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
 }

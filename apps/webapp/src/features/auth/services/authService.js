@@ -18,16 +18,15 @@ const AuthService = {
     }
   },
 
-  async sendOtp(data){
-    try{
+  async sendOtp(data) {
+    try {
       const response = await AuthApi.sendOtpApi(data);
-      console.log("data authservice", data);
-      return{
+      return {
         message: "Otp SENT to Email",
         data: response.data,
-        status:response.status,
-      }
-    }catch (error) {
+        status: response.status,
+      };
+    } catch (error) {
       return {
         message: "OTP Failed to send",
         status: error.response?.status || 500,
@@ -149,7 +148,23 @@ const AuthService = {
         data: error.response?.data || { error: "Unknown error occurred" },
       };
     }
-  }
+  },
+
+  async logout() {
+    try {
+      const response = await AuthApi.logout();
+      return {
+        message: "Logout successful",
+        status: response.status,
+      };
+    } catch (error) {
+      return {
+        message: "Logout failed, please try again.",
+        status: error.response?.status || 500,
+        data: error.response?.data || { error: "Unknown error occurred" },
+      };
+    }
+  },
 };
 
 export default AuthService;

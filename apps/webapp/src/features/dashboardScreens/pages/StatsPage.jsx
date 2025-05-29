@@ -9,6 +9,7 @@ import MoodHistoryCard from "../components/MoodHistoryCard";
 import DataInsights from "../components/DataInsights";
 import AuthService from "../../auth/services/authService";
 import MTrackerService from "../../MTracker/services/MTrackerService";
+import HeaderIcons from "../../../assets/HeaderIcons";
 
 const StatsPage = () => {
   const [userData, setUserData] = useState([]);
@@ -45,16 +46,7 @@ const StatsPage = () => {
 
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
-        <div className="menu-icons">
-          <img src={Grid} alt="Menu" className="icon" />
-        </div>
-        <div className="utility-icons">
-          <img src={Search} alt="Search" className="icon" />
-          <img src={Bell} alt="Notifications" className="icon" />
-        </div>
-      </header>
-
+      <HeaderIcons />
       <section className="dashboard-section">
         <h1 className="dashboard-greeting">Good morning, Matt,</h1>
         <p className="dashboard-subtext">How do you feel today</p>

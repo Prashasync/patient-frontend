@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../../../shared/styles/login.css';
-import AuthService from '../services/authService.js';
-import GoogleAuth from '../../../shared/utils/GoogleAuth.jsx';
-import AppleAuth from '../../../shared/utils/AppleAuth.jsx';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../../../shared/styles/login.css";
+import AuthService from "../services/authService.js";
+import GoogleAuth from "../../../shared/utils/GoogleAuth.jsx";
+import AppleAuth from "../../../shared/utils/AppleAuth.jsx";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,38 +21,38 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     formData.email = formData.email.toLowerCase();
-    localStorage.setItem('email', formData.email);
+    localStorage.setItem("email", formData.email);
     try {
       const response = await AuthService.loginUser(formData);
 
-      if (response.message === 'NOT_VERIFIED') {
-        navigate('/otp');
+      if (response.message === "NOT_VERIFIED") {
+        navigate("/otp");
         return;
       }
 
       if (response.status !== 200) {
-        setError(response.message || 'Login failed. Please try again.');
-        setTimeout(() => setError(''), 3000);
-        localStorage.removeItem('email');
+        setError("Invalid email or password, please try again.");
+        setTimeout(() => setError(""), 3000);
+        localStorage.removeItem("email");
         return;
       }
 
-      navigate('/onboarding');
+      navigate("/onboarding");
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(
-          `${err.response?.data?.message || 'Login failed'}. Please try again.`
+          `${err.response?.data?.message || "Login failed"}. Please try again.`
         );
       } else {
-        setError('An unexpected error occurred. Please try again.');
+        setError("An unexpected error occurred. Please try again.");
       }
-      setTimeout(() => setError(''), 3000);
+      setTimeout(() => setError(""), 3000);
     }
   };
 
-  useEffect(()=>{
-    scrollTo(0,0);
-  },[])
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="main-container">

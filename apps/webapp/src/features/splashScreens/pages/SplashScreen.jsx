@@ -10,13 +10,13 @@ const SplashScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowNext(true);
-    }, 2000); // 2 seconds
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
+    <div className="splash-container">
       {showNext ? (
         <SplashScreen1 />
       ) : (
@@ -24,7 +24,7 @@ const SplashScreen = () => {
           <img src={logo} alt="Prasha Sync Logo" className="logo" />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
