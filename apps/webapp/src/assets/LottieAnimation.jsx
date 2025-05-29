@@ -5,7 +5,7 @@ import animationData from "./icons/framer.json"
 const LottieAnimation = () => {
   return (
     <div>
-      <Lottie animationData={animationData} loop={true} />
+      <Lottie animationData={animationData} loop autoplay />
     </div>
   );
 };
