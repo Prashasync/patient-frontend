@@ -69,8 +69,6 @@ const SendPasswordRequest = () => {
 
   return (
     <div className="forgot-password">
-      <h2>Password Reset</h2>
-
       {step === 1 && (
         <form onSubmit={requestOtp}>
           <input

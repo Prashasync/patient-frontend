@@ -5,11 +5,15 @@ import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const AccountDetailsPage = () => {
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState("******@example.com");
-  const [phone, setPhone] = useState("+1 9876 543 210");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState(localStorage.getItem("email"));
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("********");
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState("");
+  const [updateProfile, setUpdateProfile] = useState(false);
+  const [message, setMessage] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const navigate = useNavigate();
 
   const fetchUserData = async () => {
@@ -21,8 +25,37 @@ const AccountDetailsPage = () => {
     }
   };
 
+  const handleUpdate = () => {
+    setUpdateProfile(true);
+  };
+
   const handleBack = () => {
     navigate("/home");
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      const response = await AuthService.updateUserProfile({
+        currentPassword,
+        newPassword,
+      });
+      if (response.status !== 200) {
+        return setMessage(response.message || "Failed to update profile");
+      }
+      if (response.status === 401) {
+        setMessage("Unauthorized. Please log in again.");
+        navigate("/login");
+        return;
+      }
+
+      setMessage("Profile updated successfully!");
+      setUpdateProfile(false);
+      setCurrentPassword("");
+      setNewPassword("");
+    } catch (error) {
+      console.error("There was an error submitting the form: ", error);
+      setMessage("Failed to update profile. Please try again.");
+    }
   };
 
   useEffect(() => {
@@ -37,9 +70,17 @@ const AccountDetailsPage = () => {
             <FaArrowLeft />
           </button>
           <h2 className="account-title">Account details</h2>
-          <button className="save-button">Save</button>
+          {!updateProfile ? (
+            <p className="save-button" onClick={handleUpdate}>
+              {" "}
+              Update
+            </p>
+          ) : (
+            <button className="save-button" onClick={handleSubmit}>
+              Save
+            </button>
+          )}
         </div>
-
         <div className="profile-section">
           <div className="profile-image-wrapper">
             <img
@@ -56,7 +97,6 @@ const AccountDetailsPage = () => {
           </h3>
           <p className="profile-email">{email}</p>
         </div>
-
         <form className="form-section">
           <div className="form-group">
             <label>Your Name</label>
@@ -100,7 +140,35 @@ const AccountDetailsPage = () => {
               disabled
             />
           </div>
+          {updateProfile && (
+            <React.Fragment>
+              <div className="form-group">
+                <label>Current Password</label>
+                <input
+                  type="password"
+                  placeholder="Enter new password"
+                  className="form-input"
+                  onChange={(e) => setCurrentPassword(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label>New Password</label>
+                <input
+                  type="password"
+                  placeholder="Enter new password"
+                  className="form-input"
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
+              </div>
+            </React.Fragment>
+          )}
         </form>
+        {message && (
+          <div className="message">
+            <p>{message}</p>
+          </div>
+        )}
       </div>
     </div>
   );

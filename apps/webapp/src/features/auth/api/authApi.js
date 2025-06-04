@@ -18,6 +18,24 @@ const AuthApi = {
     }
   },
 
+  async updateUserProfileApi(data) {
+    try {
+      return axios.patch(
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/profile`,
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      console.error("Error updating user profile:", error);
+      throw error;
+    }
+  },
+
   async loginUserApi(data) {
     try {
       return axios.post(

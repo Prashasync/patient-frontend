@@ -151,7 +151,7 @@ const VoiceToVoicePage = ({ onClose, addMessage }) => {
 
       setTypedText((prev) => prev + text.charAt(i));
       i++;
-    }, 40);
+    }, 60);
 
     addMessage(text, "ai", keywords);
     if (

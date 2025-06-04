@@ -18,6 +18,23 @@ const AuthService = {
     }
   },
 
+  async updateUserProfile(data) {
+    try {
+      const response = await AuthApi.updateUserProfileApi(data);
+      return {
+        message: "PROFILE_UPDATED",
+        data: response.data,
+        status: response.status,
+      };
+    } catch (error) {
+      console.log(error)
+      return {
+        message: error.response?.data?.message || "PROFILE_UPDATE_FAILED",
+        status: error.status || 500,
+      };
+    }
+  },
+
   async sendOtp(data) {
     try {
       const response = await AuthApi.sendOtpApi(data);

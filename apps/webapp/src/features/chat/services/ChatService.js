@@ -25,7 +25,10 @@ const ChatService = {
       const response = await ChatApi.saveAiDoctorResponse(data);
       return response;
     } catch (error) {
-      console.error("There was an error inside ai doctor response service:", error);
+      console.error(
+        "There was an error inside ai doctor response service:",
+        error
+      );
       throw error;
     }
   },
@@ -35,7 +38,10 @@ const ChatService = {
       const response = await ChatApi.sendFeedback(data);
       return response;
     } catch (error) {
-      console.error("There was an error inside sending feedback service:", error);
+      console.error(
+        "There was an error inside sending feedback service:",
+        error
+      );
       throw error;
     }
   },

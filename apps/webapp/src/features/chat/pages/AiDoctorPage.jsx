@@ -14,8 +14,7 @@ import { WebSocketContext } from "../../../store/webSocketContext";
 
 const AiDoctorPage = () => {
   const [isRecording, setIsRecording] = useState(false);
-  const [audioChunks, setAudioChunks] = useState(null);
-  const [messageInput, setMessageInput] = useState(null);
+  const [messageInput, setMessageInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [voiceToVoice, setVoiceToVoice] = useState(false);
   const mediaRecorderRef = useRef(null);
@@ -39,7 +38,6 @@ const AiDoctorPage = () => {
     transcription,
     patientInfo,
     currentPersona,
-    errorMessage,
     showTyping,
     setShowTyping,
   } = useContext(WebSocketContext);
@@ -51,8 +49,6 @@ const AiDoctorPage = () => {
         navigate("/");
         return;
       }
-
-      console.log(response.data.chat);
 
       const formattedMessages = response.data.chat
         ?.filter((msg) => msg.message_text && msg.message_text.trim() !== "")
@@ -73,6 +69,7 @@ const AiDoctorPage = () => {
             id: msg.chat_message_id,
             text: msg.message_text,
             sender: msg.sender_id,
+            feedback: msg.feedback || null,
             keywords: msg.keywords || [],
             time: `${time} - ${date}`,
           };
@@ -101,7 +98,14 @@ const AiDoctorPage = () => {
   const sendMessage = (messageInput) => {
     const message = messageInput.trim();
     if (!message || !ws || ws.readyState !== WebSocket.OPEN) {
-      alert("Not connected to server or message is empty.");
+      connectWebSocket();
+
+      const interval = setInterval(() => {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.current.send(JSON.stringify({ text: message }));
+          clearInterval(interval);
+        }
+      }, 500);
       return;
     }
 
@@ -205,8 +209,6 @@ const AiDoctorPage = () => {
         mimeType: "audio/webm",
       });
       mediaRecorderRef.current = mediaRecorder;
-      setAudioChunks([]);
-
       mediaRecorder.ondataavailable = (event) => {
         if (event.data.size > 0) {
           audioChunksRef.current.push(event.data);
@@ -378,6 +380,7 @@ const AiDoctorPage = () => {
                       </button>
                     </div>
                   )}
+
                   <div ref={chatMessagesRef} />
                 </div>
               ))}
@@ -395,14 +398,41 @@ const AiDoctorPage = () => {
               placeholder="Type your message..."
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSendMessage();
+                }
+              }}
             />
-            <button onClick={handleSendMessage}>
+            <button
+              disabled={showTyping}
+              onClick={handleSendMessage}
+              style={{
+                opacity: showTyping ? 0.5 : 1,
+                pointerEvents: showTyping ? "none" : "auto",
+              }}
+            >
               <FaArrowRight />
             </button>
-            <button onClick={toggleRecording}>
-              {isRecording ? <FaStop /> : <FaMicrophone />}
+            <button
+              onClick={toggleRecording}
+              disabled={showTyping}
+              style={{
+                opacity: showTyping ? 0.5 : 1,
+                pointerEvents: showTyping ? "none" : "auto",
+              }}
+            >
+              {isRecording ? <FaStop color="red" /> : <FaMicrophone />}
             </button>
-            <button onClick={handleVoiceToVoice}>
+            <button
+              onClick={handleVoiceToVoice}
+              disabled={showTyping}
+              style={{
+                opacity: showTyping ? 0.5 : 1,
+                pointerEvents: showTyping ? "none" : "auto",
+              }}
+            >
               <FaVoicemail />
             </button>
           </div>

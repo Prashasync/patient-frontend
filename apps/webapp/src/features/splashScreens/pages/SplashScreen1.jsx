@@ -24,7 +24,7 @@ const SplashScreen1 = () => {
         Get Started
       </button>
       <p className="login-link">
-        Already have an account?
+        Already have an account?{" "}
         <span
           onClick={() => navigate("/login")}
           style={{ cursor: "pointer", textDecoration: "underline" }}

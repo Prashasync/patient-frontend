@@ -2,46 +2,53 @@ import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
-const MoodChart = ({ userData }) => {
-  console.log(userData)
+const MoodChart = ({ userData , patient}) => {
   const [selectedView, setSelectedView] = useState("Week");
 
-  const dataSets = {
-    Day: [3, 4, 2, 5, 3, 4, 4, 3, 5, 4],
-    Week: [2, 4, 5, 3, 2, 4, 5],
-    Month: [3, 2, 4, 3, 5, 4, 3, 2, 4, 5, 3, 4],
-    Year: [3, 4, 4, 5, 3, 2, 4, 3, 5, 4, 4, 3],
-  };
+  if (!userData || userData.length === 0) {
+    return <div>No mood data available</div>;
+  }
 
-  const labels = {
-    Day: [
-      "8 AM",
-      "9 AM",
-      "10 AM",
-      "11 AM",
-      "12 PM",
-      "1 PM",
-      "2 PM",
-      "3 PM",
-      "4 PM",
-      "5 PM",
-    ],
-    Week: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    Month: [
-      "Week 1",
-      "Week 2",
-      "Week 3",
-      "Week 4",
-      "Week 5",
-      "Week 6",
-      "Week 7",
-      "Week 8",
-      "Week 9",
-      "Week 10",
-      "Week 11",
-      "Week 12",
-    ],
-    Year: [
+  const groupByView = (data) => {
+    const sorted = [...data].sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+    );
+
+    const dayData = sorted.slice(-10).map((d) => d.score);
+    const dayLabels = sorted.slice(-10).map((d) => d.date);
+
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const weekData = daysOfWeek.map((day) => {
+      const dayEntries = sorted.filter((d) => d.day === day);
+      const avg = dayEntries.length
+        ? dayEntries.reduce((sum, d) => sum + d.score, 0) / dayEntries.length
+        : 0;
+      return parseFloat(avg.toFixed(2));
+    });
+
+    const monthData = [];
+    const monthLabels = [];
+    for (let i = 0; i < sorted.length; i += 7) {
+      const weekChunk = sorted.slice(i, i + 7);
+      const avg = weekChunk.length
+        ? weekChunk.reduce((sum, d) => sum + d.score, 0) / weekChunk.length
+        : 0;
+      monthData.push(parseFloat(avg.toFixed(2)));
+      monthLabels.push(`Week ${Math.floor(i / 7) + 1}`);
+    }
+
+    const yearData = new Array(12)
+      .fill(0)
+      .map((_, i) => (i < monthData.length ? monthData[i] : 0));
+    const yearLabels = [
       "Jan",
       "Feb",
       "Mar",
@@ -54,8 +61,25 @@ const MoodChart = ({ userData }) => {
       "Oct",
       "Nov",
       "Dec",
-    ],
+    ];
+
+    return {
+      dataSets: {
+        Day: dayData,
+        Week: weekData,
+        Month: monthData,
+        Year: yearData,
+      },
+      labels: {
+        Day: dayLabels,
+        Week: daysOfWeek,
+        Month: monthLabels,
+        Year: yearLabels,
+      },
+    };
   };
+
+  const { dataSets, labels } = groupByView(userData);
 
   const chartData = {
     labels: labels[selectedView],

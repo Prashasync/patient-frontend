@@ -34,7 +34,6 @@ const SettingsAccount = () => {
     try {
       const response = await AuthService.fetchUserData();
       setUserData(response.data);
-      console.log(response);
     } catch (error) {
       console.error("There was an error: ", error);
     }

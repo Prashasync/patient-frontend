@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../../shared/styles/bottomNavBar.css";
 import "../../../shared/styles/stats.css";
-import Bell from "../../../assets/icons/Union.png";
-import Search from "../../../assets/icons/search_line.svg";
-import Grid from "../../../assets/icons/grid-line.svg";
 import MoodChart from "../components/MoodChart";
 import MoodHistoryCard from "../components/MoodHistoryCard";
 import DataInsights from "../components/DataInsights";
@@ -48,7 +45,7 @@ const StatsPage = () => {
     <div className="dashboard">
       <HeaderIcons />
       <section className="dashboard-section">
-        <h1 className="dashboard-greeting">Good morning, Matt,</h1>
+        <h1 className="dashboard-greeting">Good morning, {patient?.first_name}!</h1>
         <p className="dashboard-subtext">How do you feel today</p>
       </section>
 
