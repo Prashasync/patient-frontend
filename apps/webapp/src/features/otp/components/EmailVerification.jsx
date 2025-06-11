@@ -108,6 +108,7 @@ const EmailVerification = ({ user }) => {
             <input
               key={index}
               type="text"
+              inputMode="numeric"
               maxLength="1"
               value={digit}
               onChange={(e) => handleOtpChange(e, index)}
