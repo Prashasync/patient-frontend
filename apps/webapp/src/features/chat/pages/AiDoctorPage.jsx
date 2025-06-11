@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
   FaMicrophone,
   FaArrowRight,
   FaArrowLeft,
   FaStop,
   FaVoicemail,
-} from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom";
-import "../../../shared/styles/aiDoctor.css";
-import ChatService from "../services/ChatService";
-import VoiceToVoicePage from "./VoiceToVoicePage";
-import { WebSocketContext } from "../../../store/webSocketContext";
+} from 'react-icons/fa';
+import { useNavigate, useParams } from 'react-router-dom';
+import '../../../shared/styles/aiDoctor.css';
+import ChatService from '../services/ChatService';
+import VoiceToVoicePage from './VoiceToVoicePage';
+import { WebSocketContext } from '../../../store/webSocketContext';
 
 const AiDoctorPage = () => {
   const [isRecording, setIsRecording] = useState(false);
-  const [messageInput, setMessageInput] = useState("");
+  const [messageInput, setMessageInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [voiceToVoice, setVoiceToVoice] = useState(false);
   const mediaRecorderRef = useRef(null);
@@ -23,9 +23,9 @@ const AiDoctorPage = () => {
   const navigate = useNavigate();
   const { patientId } = useParams();
   const [updatePatientId, setUpdatePatientId] = useState(null);
-  const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === "ai");
-  const lastAiText = lastAiMsg?.text || "";
-  const lastAiAudio = lastAiMsg?.audioUrl || "";
+  const lastAiMsg = [...messages].reverse().find((msg) => msg.sender === 'ai');
+  const lastAiText = lastAiMsg?.text || '';
+  const lastAiAudio = lastAiMsg?.audioUrl || '';
   const [historyLoaded, setHistoryLoaded] = useState(false);
   const audioChunksRef = useRef([]);
 
@@ -46,23 +46,24 @@ const AiDoctorPage = () => {
     try {
       const response = await ChatService.getAiDoctorChatHistory();
       if (response.status !== 200) {
-        navigate("/");
+        navigate('/');
         return;
       }
 
       const formattedMessages = response.data.chat
-        ?.filter((msg) => msg.message_text && msg.message_text.trim() !== "")
+
+        ?.filter((msg) => msg.message_text && msg.message_text.trim() !== '')
         .map((msg) => {
           const dateObj = new Date(msg.createdAt);
           const time = dateObj.toLocaleTimeString([], {
-            hour: "numeric",
-            minute: "2-digit",
+            hour: 'numeric',
+            minute: '2-digit',
             hour12: true,
           });
-          const date = dateObj.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
+          const date = dateObj.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
           });
 
           return {
@@ -76,8 +77,9 @@ const AiDoctorPage = () => {
         });
 
       setMessages(formattedMessages);
+      console.log('this is the chat message', formattedMessages);
     } catch (err) {
-      console.error("Failed to fetch chat history", err);
+      console.error('Failed to fetch chat history', err);
     }
   };
 
@@ -92,7 +94,7 @@ const AiDoctorPage = () => {
   };
 
   const handleTranscription = (transcription) => {
-    addMessage(transcription, "user");
+    addMessage(transcription, 'user');
   };
 
   const sendMessage = (messageInput) => {
@@ -112,7 +114,7 @@ const AiDoctorPage = () => {
     try {
       ws.send(JSON.stringify({ text: message }));
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error('Error sending message:', error);
       setShowTyping(false);
     }
   };
@@ -121,13 +123,13 @@ const AiDoctorPage = () => {
     const text = response.data;
     const keywords = response.extracted_keywords;
     if (
-      response.extracted_keywords.includes("greeting", "introduction") &&
-      localStorage.getItem("introduction")
+      response.extracted_keywords.includes('greeting', 'introduction') &&
+      localStorage.getItem('introduction')
     ) {
       return;
     }
-    localStorage.setItem("introduction", true);
-    addMessage(text, "ai", keywords);
+    localStorage.setItem('introduction', true);
+    addMessage(text, 'ai', keywords);
   };
 
   const addMessage = async (text, sender, keywords = []) => {
@@ -137,18 +139,18 @@ const AiDoctorPage = () => {
       sender,
       keywords,
       time: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
+        hour: '2-digit',
+        minute: '2-digit',
       }),
       feedback: null,
     };
 
     setMessages((prev) => [...prev, newMessage]);
     try {
-      if (newMessage.sender === "user") {
+      if (newMessage.sender === 'user') {
         await ChatService.sendAiDoctorMessage(newMessage);
       }
-      if (newMessage.sender === "ai") {
+      if (newMessage.sender === 'ai') {
         await ChatService.saveAiDoctorResponse(newMessage);
       }
     } catch (error) {
@@ -163,11 +165,11 @@ const AiDoctorPage = () => {
     const message = messageInput.trim();
     try {
       sendMessage(message);
-      addMessage(message, "user");
-      setMessageInput("");
+      addMessage(message, 'user');
+      setMessageInput('');
       setShowTyping(true);
     } catch (error) {
-      console.error("There was an error sending the message: ", error);
+      console.error('There was an error sending the message: ', error);
     }
   };
 
@@ -182,31 +184,31 @@ const AiDoctorPage = () => {
   const getPersonaClass = () => `persona-indicator persona-${currentPersona}`;
   const getPersonaName = () => {
     const names = {
-      general: "Dr. Ori",
-      psychologist: "Psychologist",
-      dietician: "Dietician",
+      general: 'Dr. Ori',
+      psychologist: 'Psychologist',
+      dietician: 'Dietician',
     };
-    return names[currentPersona] || "General OPD";
+    return names[currentPersona] || 'General OPD';
   };
 
   const startRecording = async () => {
     if (!navigator.mediaDevices || !window.MediaRecorder) {
-      alert("Audio recording is not supported in this browser.");
+      alert('Audio recording is not supported in this browser.');
       return;
     }
 
     if (
       mediaRecorderRef.current &&
-      mediaRecorderRef.current.state === "recording"
+      mediaRecorderRef.current.state === 'recording'
     ) {
-      console.warn("Already recording.");
+      console.warn('Already recording.');
       return;
     }
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream, {
-        mimeType: "audio/webm",
+        mimeType: 'audio/webm',
       });
       mediaRecorderRef.current = mediaRecorder;
       mediaRecorder.ondataavailable = (event) => {
@@ -223,7 +225,7 @@ const AiDoctorPage = () => {
       mediaRecorder.start();
       setIsRecording(true);
     } catch (error) {
-      console.error("Microphone error:", error);
+      console.error('Microphone error:', error);
       alert(`Microphone error: ${error.message}`);
     }
   };
@@ -236,19 +238,19 @@ const AiDoctorPage = () => {
   };
 
   const sendAudio = () => {
-    const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
+    const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
     audioChunksRef.current = [];
     const reader = new FileReader();
     setShowTyping(true);
 
     reader.onload = () => {
-      const base64Audio = reader.result.split(",")[1];
+      const base64Audio = reader.result.split(',')[1];
       if (ws && ws.readyState === WebSocket.OPEN) {
         ws.send(JSON.stringify({ audio: base64Audio }));
-        console.log("Audio sent to server");
+        console.log('Audio sent to server');
       } else {
-        console.error("WebSocket not connected");
-        alert("WebSocket not connected. Please refresh the page.");
+        console.error('WebSocket not connected');
+        alert('WebSocket not connected. Please refresh the page.');
         setShowTyping(false);
       }
     };
@@ -257,7 +259,7 @@ const AiDoctorPage = () => {
   };
 
   const handleBack = () => {
-    navigate("/home");
+    navigate('/home');
   };
 
   const handleVoiceToVoice = () => {
@@ -285,7 +287,7 @@ const AiDoctorPage = () => {
 
   useEffect(() => {
     if (chatMessagesRef.current) {
-      chatMessagesRef.current.scrollIntoView({ behavior: "smooth" });
+      chatMessagesRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
 
@@ -307,7 +309,7 @@ const AiDoctorPage = () => {
         />
       ) : (
         <div className="chat-container">
-          <audio ref={audioRef} style={{ display: "none" }} />
+          <audio ref={audioRef} style={{ display: 'none' }} />
 
           <div className="chat-header">
             <button className="back-button" onClick={handleBack}>
@@ -317,8 +319,8 @@ const AiDoctorPage = () => {
               <span className={getPersonaClass()}>{getPersonaName()}</span>
             </h2>
             <div className="connection-status">
-              <span className={isConnected ? "connected" : "disconnected"}>
-                {isConnected ? "Connected" : "Disconnected"}
+              <span className={isConnected ? 'connected' : 'disconnected'}>
+                {isConnected ? 'Connected' : 'Disconnected'}
               </span>
             </div>
           </div>
@@ -346,34 +348,38 @@ const AiDoctorPage = () => {
             )}
 
             <div className="messages">
+              {console.log(
+                'REACT_APP_DOCTOR_ID:',
+                process.env.REACT_APP_DOCTOR_ID
+              )}
               {messages.map((msg) => (
                 <div
                   key={msg.id}
                   ref={chatMessagesRef}
                   className={`message ${
                     msg.sender === process.env.REACT_APP_DOCTOR_ID ||
-                    msg.sender === "ai"
-                      ? "ai"
-                      : "user"
+                    msg.sender === 'ai'
+                      ? 'ai'
+                      : 'user'
                   }`}
                 >
                   <div className="text">{msg.text}</div>
                   <span className="time">{msg.time}</span>
 
-                  {msg.sender === "ai" && (
+                  {msg.sender === 'ai' && (
                     <div className="feedback-buttons">
                       <button
-                        onClick={() => handleFeedback(msg.id, "up")}
+                        onClick={() => handleFeedback(msg.id, 'up')}
                         className={`thumb-button ${
-                          msg.feedback === "up" ? "active" : ""
+                          msg.feedback === 'up' ? 'active' : ''
                         }`}
                       >
                         👍
                       </button>
                       <button
-                        onClick={() => handleFeedback(msg.id, "down")}
+                        onClick={() => handleFeedback(msg.id, 'down')}
                         className={`thumb-button ${
-                          msg.feedback === "down" ? "active" : ""
+                          msg.feedback === 'down' ? 'active' : ''
                         }`}
                       >
                         👎
@@ -393,13 +399,13 @@ const AiDoctorPage = () => {
           </div>
 
           <div className="chat-input">
-            <input
+            <textarea
               type="text"
               placeholder="Type your message..."
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
+                if (e.key === 'Enter' && !e.shiftKey) {
                   e.preventDefault();
                   handleSendMessage();
                 }
@@ -410,7 +416,7 @@ const AiDoctorPage = () => {
               onClick={handleSendMessage}
               style={{
                 opacity: showTyping ? 0.5 : 1,
-                pointerEvents: showTyping ? "none" : "auto",
+                pointerEvents: showTyping ? 'none' : 'auto',
               }}
             >
               <FaArrowRight />
@@ -420,7 +426,7 @@ const AiDoctorPage = () => {
               disabled={showTyping}
               style={{
                 opacity: showTyping ? 0.5 : 1,
-                pointerEvents: showTyping ? "none" : "auto",
+                pointerEvents: showTyping ? 'none' : 'auto',
               }}
             >
               {isRecording ? <FaStop color="red" /> : <FaMicrophone />}
@@ -430,7 +436,7 @@ const AiDoctorPage = () => {
               disabled={showTyping}
               style={{
                 opacity: showTyping ? 0.5 : 1,
-                pointerEvents: showTyping ? "none" : "auto",
+                pointerEvents: showTyping ? 'none' : 'auto',
               }}
             >
               <FaVoicemail />
