@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../../auth/services/authService';
 import PropTypes from 'prop-types';
@@ -9,6 +9,7 @@ const EmailVerification = ({ user }) => {
   const [resendOtp, setResendOtp] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [resentMessage, setResentMessage] = useState(false);
+  const hasSentRef = useRef(false);
   const navigate = useNavigate();
 
   const email = localStorage.getItem('email');
@@ -96,6 +97,19 @@ const EmailVerification = ({ user }) => {
       setMessage('An error occurred while verifying the email.');
     }
   };
+
+  useEffect(() => {
+    if (hasSentRef.current) return;
+    hasSentRef.current = true;
+    const initSend = async () => {
+      try {
+        await AuthService.sendOtp(email);
+      } catch (error) {
+        console.error('Initial OTP send failed:', error);
+      }
+    };
+    initSend();
+  }, [email]);
 
   useEffect(() => {
     if (otp.every((digit) => digit !== '')) {

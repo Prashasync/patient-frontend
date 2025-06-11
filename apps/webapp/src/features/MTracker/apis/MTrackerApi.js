@@ -1,8 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const MTrackerApi = {
   async getMoodScore(patient_id) {
-    console.log('patient id', patient_id);
     try {
       return await axios.get(
         `${process.env.REACT_APP_DOCTOR_URL}/emotion/patient/${patient_id}`,
@@ -13,7 +12,7 @@ const MTrackerApi = {
         }
       );
     } catch (error) {
-      console.error('error for mood count', error);
+      console.error("error for mood count", error);
       throw error;
     }
   },
@@ -32,7 +31,7 @@ const MTrackerApi = {
           isAuthorized: false,
         };
       }
-      console.error('There was an error with the API request:', error);
+      console.error("There was an error with the API request:", error);
       throw error;
     }
   },
@@ -48,7 +47,23 @@ const MTrackerApi = {
         }
       );
     } catch (error) {
-      console.error('There was an error with the API request: ', error);
+      console.error("There was an error with the API request: ", error);
+      throw error;
+    }
+  },
+
+  async getInsights(patient_id) {
+    try {
+      return await axios.get(
+        `${process.env.REACT_APP_DOCTOR_URL}/emotion/patient/${patient_id}/daily-mood`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_DOCTOR_TOKEN}`,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("There was an error inside the mtracker api: ", error);
       throw error;
     }
   },
@@ -60,7 +75,7 @@ const MTrackerApi = {
         emotion,
         {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           withCredentials: true,
         }
@@ -71,7 +86,7 @@ const MTrackerApi = {
           isAuthorized: false,
         };
       }
-      console.error('There was an error making the API call:', error);
+      console.error("There was an error making the API call:", error);
       throw error;
     }
   },
@@ -83,13 +98,13 @@ const MTrackerApi = {
         { data },
         {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           withCredentials: true,
         }
       );
     } catch (error) {
-      console.error('There was an error making the API call: ', error);
+      console.error("There was an error making the API call: ", error);
       throw error;
     }
   },
@@ -101,13 +116,13 @@ const MTrackerApi = {
         { data },
         {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           withCredentials: true,
         }
       );
     } catch (error) {
-      console.error('Error inside the API: ', error);
+      console.error("Error inside the API: ", error);
       throw error;
     }
   },
@@ -118,12 +133,12 @@ const MTrackerApi = {
         `${process.env.REACT_APP_PATIENT_SERVER_URL}/api/v1/patient/voicenote`,
         data,
         {
-          headers: { 'Content-Type': 'multipart/form-data' },
+          headers: { "Content-Type": "multipart/form-data" },
           withCredentials: true,
         }
       );
     } catch (error) {
-      console.error('There was an error inside the service: ', error);
+      console.error("There was an error inside the service: ", error);
       throw error;
     }
   },

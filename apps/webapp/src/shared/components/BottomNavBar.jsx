@@ -14,7 +14,7 @@ const BottomNavBar = () => {
 
   const navItems = [
     { icon: homeIcon, label: "Home", path: "/home" },
-    { icon: statsIcon, label: "Stats", path: "/dashboard" },
+    { icon: statsIcon, label: "Stats", path: "/stats" },
     { icon: appointmentIcon, label: "Appt", path: "/appointments" },
     { icon: timelineIcon, label: "Timeline", path: "/timeline" },
     { icon: mtrackerIcon, label: "MTracker", path: "/mtracker" },

@@ -18,16 +18,32 @@ const AuthService = {
     }
   },
 
-  async sendOtp(data){
-    try{
+  async updateUserProfile(data) {
+    try {
+      const response = await AuthApi.updateUserProfileApi(data);
+      return {
+        message: "PROFILE_UPDATED",
+        data: response.data,
+        status: response.status,
+      };
+    } catch (error) {
+      console.log(error)
+      return {
+        message: error.response?.data?.message || "PROFILE_UPDATE_FAILED",
+        status: error.status || 500,
+      };
+    }
+  },
+
+  async sendOtp(data) {
+    try {
       const response = await AuthApi.sendOtpApi(data);
-      console.log("data authservice", data);
-      return{
+      return {
         message: "Otp SENT to Email",
         data: response.data,
-        status:response.status,
-      }
-    }catch (error) {
+        status: response.status,
+      };
+    } catch (error) {
       return {
         message: "OTP Failed to send",
         status: error.response?.status || 500,
@@ -99,7 +115,7 @@ const AuthService = {
   async googleLogin(data) {
     try {
       const response = await AuthApi.googleLogin(data);
-      localStorage.setItem("email", JSON.stringify(response.data.user.email));
+      localStorage.setItem("email", response.data.user.email);
       return {
         message: "GOOGLE_LOGIN_SUCCESS",
         data: response.data,
@@ -149,7 +165,23 @@ const AuthService = {
         data: error.response?.data || { error: "Unknown error occurred" },
       };
     }
-  }
+  },
+
+  async logout() {
+    try {
+      const response = await AuthApi.logout();
+      return {
+        message: "Logout successful",
+        status: response.status,
+      };
+    } catch (error) {
+      return {
+        message: "Logout failed, please try again.",
+        status: error.response?.status || 500,
+        data: error.response?.data || { error: "Unknown error occurred" },
+      };
+    }
+  },
 };
 
 export default AuthService;

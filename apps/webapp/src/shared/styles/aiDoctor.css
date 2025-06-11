@@ -241,7 +241,7 @@
 }
 
 .ai-text::after {
-  content: '|';
+  content: "|";
   animation: blink 1s step-start infinite;
   margin-left: 3px;
   color: #1d3557;
@@ -249,7 +249,7 @@
 .listen {
   width: 150px;
   height: 150px;
-  background-image: url('../../assets/icons/listening.gif'); /* Replace with your image URL */
+  background-image: url("../../assets/icons/listening.gif");
   background-size: cover; /* Cover the entire div */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
@@ -257,11 +257,17 @@
 .stop-listen {
   width: 250px;
   height: 220px;
-  background-image: url('../../assets/icons/stop.webp'); /* Replace with your image URL */
-  background-size: cover; /* Cover the entire div */
-  background-position: left; /* Center the image */
+  background-image: url("../../assets/icons/stop.webp");
+  background-size: cover;
+  background-position: left;
   background-repeat: no-repeat;
 }
+
+/* .voice-to-voice-screen {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+} */
 
 @keyframes blink {
   50% {

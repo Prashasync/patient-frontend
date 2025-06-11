@@ -1,0 +1,219 @@
+.settings-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.settings-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.settings-container .section {
+  margin-bottom: 24px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 16px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f4f6f7;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-item:hover {
+  background: #f0f0f0;
+}
+
+.settings-left {
+  display: flex;
+  align-items: center;
+}
+
+.settings-icon {
+  background: #eef1f5;
+  padding: 10px;
+  border-radius: 12px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-icon svg {
+  color: #111;
+  width: 18px;
+  height: 18px;
+}
+
+.settings-text .title {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.settings-text .subtitle {
+  font-size: 12px;
+  color: #888;
+}
+
+.chevron {
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 20px;
+}
+
+.settings-open {
+  background-color: #f4f6f7;
+  width: 100vw;
+  height: 200vh;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: hidden;
+}
+
+.settings-close {
+  position: absolute;
+  top: 80px;
+  left: -1000px;
+  background-color: #f4f6f7;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* ACCOUNT PAGE  */
+
+.account-container {
+  min-height: 100vh;
+  background-color: #F4F6F7;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.account-card {
+  width: 100%;
+  max-width: 400px;
+
+
+  padding: 1.5rem;
+  position: relative;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.account-container .back-button {
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.account-container .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.account-container .save-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.account-container .profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.account-container .profile-image-wrapper {
+  position: relative;
+}
+
+.account-container .profile-image {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-container .upload-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.account-container .file-input {
+  display: none;
+}
+
+.account-container .profile-name {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.account-container .profile-email {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.account-container .form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.account-container .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-container .form-group label {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.account-container .form-input {
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.account-container .form-input:focus {
+  border-color: #3b82f6;
+}

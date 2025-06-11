@@ -80,14 +80,7 @@
   justify-content: center;
 }
 
-/* . {
-  width: 10%;
-} */
 .social-login-container {
-  background-color: #ffffff;
-  border: 2px solid #ecf0f1;
-  width: 100%;
-  border-radius: 8px;
   height: 50px;
   align-items: center;
   justify-content: center;
@@ -128,3 +121,47 @@
 #rememberMe {
   width: fit-content;
 }
+
+@media (min-width: 768px) {
+  .login-container {
+    max-width: 600px;
+    height: auto;
+    padding: 40px;
+  }
+
+  .login-container h2 {
+    font-size: 28px;
+  }
+
+  .primary-button {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .login-container {
+    max-width: 700px;
+    flex: 1;
+    padding: 60px;
+    height: auto;
+  }
+
+  .login-container form {
+    width: 70%;
+  }
+
+  .login-container h2 {
+    font-size: 32px;
+  }
+}
+
